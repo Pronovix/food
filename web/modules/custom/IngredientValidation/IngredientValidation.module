@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+
+function ingredientValidation_entity_type_alter(array &$entity_types){
+
+  $entity_types['node'] -> addConstraint('ValidIngredient');
+
+}

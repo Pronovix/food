@@ -1,0 +1,4 @@
+name: Ingredient Validation
+type: module
+description: Validate the Ingredient field on the Product content type
+core: 8.x
