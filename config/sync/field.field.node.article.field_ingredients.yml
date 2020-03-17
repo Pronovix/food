@@ -1,0 +1,19 @@
+uuid: eb5f1b52-d7ab-471b-b4ea-a89ab447a337
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredients
+    - node.type.article
+id: node.article.field_ingredients
+field_name: field_ingredients
+entity_type: node
+bundle: article
+label: Ingredients
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
