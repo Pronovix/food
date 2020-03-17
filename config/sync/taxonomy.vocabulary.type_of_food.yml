@@ -1,0 +1,8 @@
+uuid: 594a5064-5aa6-4726-9cb0-ba5cb83d7642
+langcode: en
+status: true
+dependencies: {  }
+name: 'Type of food'
+vid: type_of_food
+description: 'Vocabulary for types of food'
+weight: 0

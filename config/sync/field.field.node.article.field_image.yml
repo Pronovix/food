@@ -1,4 +1,4 @@
-uuid: c2bd15c6-8b69-4714-b3c8-bb457262065f
+uuid: 6077a8e2-737e-41db-ae60-d4ebdf77fc0d
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ entity_type: node
 bundle: article
 label: Image
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -26,11 +26,11 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: true
-  title_field: false
   alt_field_required: true
+  title_field: false
   title_field_required: false
   default_image:
-    uuid: null
+    uuid: ''
     alt: ''
     title: ''
     width: null
