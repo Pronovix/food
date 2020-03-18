@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraint;
  * @Constraint(
  *  id = "ValidIngredient",
  *  label = @Translation("Prevent Product CT creation if it isn't matched with the required formula", context = "Validation"),
- *  type = "entity"
+ *  type = "string"
  * )
  * */
 

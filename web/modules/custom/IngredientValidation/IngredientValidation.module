@@ -4,8 +4,9 @@
  * Implements hook_entity_type_alter().
  */
 
-function ingredientValidation_entity_type_alter(array &$entity_types){
+function ingredientValidation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, $bundle){
 
-  $entity_types['node'] -> addConstraint('ValidIngredient');
+  if($entity_type->id() === 'node' && $bundle === 'article' && isset($fields['field_ingredients'])  )
+  $fields['field_ingredients'] -> addConstraint('ValidIngredient',[]);
 
 }

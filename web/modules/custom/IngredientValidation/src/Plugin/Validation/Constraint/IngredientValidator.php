@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Entity\EntityPublishedInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
@@ -14,9 +16,11 @@ class IngredientValidator extends ConstraintValidator {
    */
   public function validate($value, Constraint $constraint)
   {
-    if(!isset($value)){
-      return;
-    }
+    $items =& $value;
+
+    $entity = $this->context->getRoot()->getValue();
+
+
     //TODO: writing the validation code
   }
 }
