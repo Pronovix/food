@@ -1,26 +1,22 @@
 <?php
 
-use Drupal\Core\Entity\EntityPublishedInterface;
-use Drupal\Core\Field\FieldItemListInterface;
+declare(strict_types = 1);
+
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 /**
- * Validates the Ingredients field on the Product CT
+ * Validates the Ingredients field on the Product CT.
  */
-
 class IngredientValidator extends ConstraintValidator {
 
   /**
    * {@inheritdoc}
    */
-  public function validate($value, Constraint $constraint)
-  {
-    $items =& $value;
-
-    $entity = $this->context->getRoot()->getValue();
-
-
-    //TODO: writing the validation code
+  public function validate($value, Constraint $constraint) {
+    // $items =& $value;
+    // $entity = $this->context->getRoot()->getValue();
+    // TODO: writing the validation code
   }
+
 }

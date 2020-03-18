@@ -1,12 +1,16 @@
 <?php
 
 /**
- * Implements hook_entity_type_alter().
+ * @file
  */
 
-function ingredientValidation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, $bundle){
+declare(strict_types = 1);
 
-  if($entity_type->id() === 'node' && $bundle === 'article' && isset($fields['field_ingredients'])  )
-  $fields['field_ingredients'] -> addConstraint('ValidIngredient',[]);
+
+function ingredient_validation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, $bundle){
+
+  if ($entity_type->id() === 'node' && $bundle === 'article' && isset($fields['field_ingredients'])) {
+    $fields['field_ingredients']->addConstraint('ValidIngredient', []);
+  }
 
 }
