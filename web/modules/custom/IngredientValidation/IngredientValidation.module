@@ -2,13 +2,15 @@
 
 /**
  * @file
+ * Contains hook for Ingredient Validation module.
  */
 
 declare(strict_types = 1);
 
-
-function ingredient_validation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, $bundle){
-
+/**
+ * Implments the hook_bundle_field_info_alter()
+ */
+function ingredient_validation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, string $bundle): void : void {
   if ($entity_type->id() === 'node' && $bundle === 'article' && isset($fields['field_ingredients'])) {
     $fields['field_ingredients']->addConstraint('ValidIngredient', []);
   }

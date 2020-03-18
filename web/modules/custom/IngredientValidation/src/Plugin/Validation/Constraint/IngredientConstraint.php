@@ -2,11 +2,12 @@
 
 declare(strict_types = 1);
 
+namespace Drupal\IngredientValidation\src\Plugin\Validation\Constraint;
+
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Make sure that the ingredients consist of a number, an amount an ingredient,
- * and only one ingredient was written in one line.
+ * Make sure that the ingredients are written correctly.
  *
  * @Constraint(
  * id = "ValidIngredient",
@@ -16,13 +17,11 @@ use Symfony\Component\Validator\Constraint;
  * )
  */
 class IngredientConstraint extends Constraint {
-
   /**
-   * Message shown when trying create Product CT
-   * without writing the ingredients in a correct way.
+   * Message shown when validation fails.
+   *
+   * @var string
    */
-
-
   public $message = 'Product creation failed: Ingredients must be in the correct form (Amount Unit Ingredient) and one in a line.';
 
   /*
