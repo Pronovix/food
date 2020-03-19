@@ -16,7 +16,16 @@ class IngredientConstraintValidator extends ConstraintValidator {
    * {@inheritdoc}
    */
   public function validate($value, Constraint $constraint) {
-    die('valami');
+    $ingredients = $value->value;
+    $lines = explode('\n', strval($ingredients));
+    $pattern = "/^\d\s\w+\s\w+\s\w+$/";
+    foreach ($lines as $line) {
+      if (!preg_match($pattern, $line)) {
+        $this->context->addViolation($constraint->message);
+        return;
+      }
+    }
+
   }
 
 }

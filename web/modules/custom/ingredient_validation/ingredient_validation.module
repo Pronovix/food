@@ -7,10 +7,12 @@
 
 declare(strict_types = 1);
 
+use Drupal\Core\Entity\EntityTypeInterface;
+
 /**
  * Implments the hook_bundle_field_info_alter()
  */
-function ingredient_validation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, string $bundle): void : void {
+function ingredient_validation_entity_bundle_field_info_alter(array &$fields, EntityTypeInterface $entity_type, string $bundle): void {
   if ($entity_type->id() === 'node' && $bundle === 'article' && isset($fields['field_ingredients'])) {
     $fields['field_ingredients']->addConstraint('ValidIngredient', []);
   }
