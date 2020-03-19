@@ -116,9 +116,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #273238;
   text-align: left;
-  background-color: #fff;
+  background-color: #eceff1;
 }
 
 [tabindex="-1"]:focus {
@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  color: #273238;
 }
 
 abbr[title],
@@ -211,12 +212,17 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #f08233;
   text-decoration: none;
   background-color: transparent;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
 }
 a:hover {
-  color: #0056b3;
+  color: #f08233;
   text-decoration: underline;
 }
 
@@ -283,6 +289,9 @@ label {
 
 button {
   border-radius: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #273238;
 }
 
 button:focus {
@@ -304,11 +313,6 @@ textarea {
 button,
 input {
   overflow: visible;
-}
-
-button,
-select {
-  text-transform: none;
 }
 
 select {
@@ -419,6 +423,11 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
+  color: #273238;
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 h1, .h1 {
