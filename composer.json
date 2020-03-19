@@ -16,7 +16,6 @@
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal/bootstrap": "^3.21",
         "drupal/config_installer": "^1.8",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
