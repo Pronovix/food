@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\ingredient_validation\src\Plugin\Validation\Constraint;
+namespace Drupal\ingredient_validation\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 
