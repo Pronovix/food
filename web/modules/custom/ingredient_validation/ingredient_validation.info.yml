@@ -1,4 +1,7 @@
-name: ingredient_validation
+name: Ingredient Validation
 type: module
 description: Validate the Ingredient field on the Product content type
 core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:field
