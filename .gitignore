@@ -2,7 +2,6 @@
 /.*
 !.gitignore
 !/.unicompilerc.json
-!/.env.example
 !/.eslintrc.json
 !/.prettierrc.json
 !/.eslintignore
