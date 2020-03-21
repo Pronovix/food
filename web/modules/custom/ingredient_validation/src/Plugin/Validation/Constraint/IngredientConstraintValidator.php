@@ -16,7 +16,7 @@ final class IngredientConstraintValidator extends ConstraintValidator {
    * {@inheritdoc}
    */
   public function validate($value, Constraint $constraint): void {
-    $lines = explode(PHP_EOL, strval($value->value));
+    $lines = explode(PHP_EOL, (string) $value->value);
     $pattern = "/^\d+\s\w+\s\w+\s\w+\r?$/";
     foreach ($lines as $line) {
       if (!preg_match($pattern, $line)) {
