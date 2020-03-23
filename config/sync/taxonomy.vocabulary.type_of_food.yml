@@ -1,8 +1,0 @@
-uuid: 865420ac-52f7-42fa-8342-6d7c4f9db816
-langcode: en
-status: true
-dependencies: {  }
-name: 'Type of food'
-vid: type_of_food
-description: 'Vocabulary for types of food'
-weight: 0

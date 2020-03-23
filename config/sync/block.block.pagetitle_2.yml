@@ -1,0 +1,18 @@
+uuid: 7ce8ddb8-bf42-411c-9111-82a00f4b04a8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - recipe_theme
+id: pagetitle_2
+theme: recipe_theme
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

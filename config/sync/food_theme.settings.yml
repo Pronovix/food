@@ -1,0 +1,26 @@
+schemas:
+  bootstrap: 8000
+  food_theme: 8000
+favicon:
+  mimetype: image/png
+  path: 'public://logo_4.png'
+  url: 'http://localhost:32769/sites/default/files/logo_4.png'
+  use_default: false
+logo:
+  path: 'public://logo_3.png'
+  url: ''
+  use_default: false
+table_responsive: '-1'
+cdn_theme: bootstrap
+cdn_cache_ttl_versions: 0
+cdn_cache_ttl_themes: 0
+cdn_cache_ttl_assets: 0
+cdn_cache_ttl_library: 0
+reset_http_request_cache: ''
+table: ''
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+cdn_provider: ''
