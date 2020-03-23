@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraint;
  *
  * @Constraint(
  * id = "ValidIngredient",
- * label = @Translation(" Not valid form of ingredients."),
+ * label = @Translation("Not valid form of ingredients"),
  * type = "string"
  * )
  */
