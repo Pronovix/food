@@ -1,0 +1,7 @@
+name: Ingredient Validation
+type: module
+description: Validate the Ingredient field on the Product content type
+core_version_requirement: ^8.8
+dependencies:
+  - drupal:node
+  - drupal:field
