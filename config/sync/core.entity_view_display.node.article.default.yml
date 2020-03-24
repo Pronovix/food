@@ -25,9 +25,14 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
+  addtoany:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   comment:
     type: comment_default
-    weight: 5
+    weight: 7
     region: content
     label: above
     settings:
@@ -35,7 +40,7 @@ content:
       pager_id: 0
     third_party_settings: {  }
   field_description:
-    weight: 1
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -52,13 +57,21 @@ content:
     label: hidden
   field_ingredients:
     type: basic_string
-    weight: 2
+    weight: 1
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_type_of_food:
+  field_tags:
+    type: entity_reference_label
     weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_type_of_food:
+    weight: 4
     label: above
     settings:
       link: true
@@ -66,10 +79,9 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   body: true
-  field_tags: true
