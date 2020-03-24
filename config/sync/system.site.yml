@@ -1,7 +1,7 @@
 uuid: bb8c67fd-af3e-4a6e-a462-d4c589114477
-name: 'Recipe Magazine'
+name: Site-Install
 mail: admin@example.com
-slogan: 'Your Dream Dish'
+slogan: ''
 page:
   403: ''
   404: ''

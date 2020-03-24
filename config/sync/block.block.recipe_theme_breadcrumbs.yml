@@ -1,16 +1,16 @@
-uuid: 1b7ee2b2-6efc-4939-98bf-01f7cb83bcfd
+uuid: 0b8427a1-49ba-43e2-a878-b286a1dbf5a3
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - food_theme
+    - recipe_theme
 _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
-id: food_theme_breadcrumbs
-theme: food_theme
-region: navigation
+id: recipe_theme_breadcrumbs
+theme: recipe_theme
+region: navbar_branding
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
