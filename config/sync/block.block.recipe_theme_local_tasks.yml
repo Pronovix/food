@@ -1,13 +1,15 @@
-uuid: f451c7ae-0df5-43b8-a4b7-3bb942ff2419
+uuid: 6f8aed8a-288e-42f6-bf26-e052b2555707
 langcode: en
 status: true
 dependencies:
   theme:
     - recipe_theme
-id: tabs
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: recipe_theme_local_tasks
 theme: recipe_theme
-region: header
-weight: 0
+region: content
+weight: -40
 provider: null
 plugin: local_tasks_block
 settings:

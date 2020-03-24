@@ -1,15 +1,15 @@
-uuid: afe260fc-dfcb-4e69-8bf6-47334e21daa4
+uuid: f7dbcbf1-6f10-4733-a603-5362ed13cfce
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - food_theme
+    - recipe_theme
 _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: food_theme_branding
-theme: food_theme
+id: recipe_theme_branding
+theme: recipe_theme
 region: header
 weight: 0
 provider: null

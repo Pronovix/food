@@ -1,16 +1,16 @@
-uuid: acdad559-e2e6-407f-bb63-6e02393419b1
+uuid: 5ab6865e-f629-4f58-aab4-49de6d37cbfb
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - food_theme
+    - recipe_theme
 _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
-id: food_theme_messages
-theme: food_theme
-region: highlighted
+id: recipe_theme_messages
+theme: recipe_theme
+region: navbar_branding
 weight: 0
 provider: null
 plugin: system_messages_block

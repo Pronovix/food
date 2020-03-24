@@ -1,4 +1,4 @@
-uuid: c2d9edc2-3477-45a4-9c78-71b2d5ee4b2a
+uuid: 888c4631-db92-4920-be9f-eac864559a9b
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - food_theme
+    - recipe_theme
 _core:
   default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
-id: food_theme_footer
-theme: food_theme
-region: navigation
+id: recipe_theme_footer
+theme: recipe_theme
+region: navbar_branding
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

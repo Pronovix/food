@@ -1,16 +1,16 @@
-uuid: 10bd2766-c31e-47bb-bd52-8fc0cf5c75eb
+uuid: ed85f4bb-f727-425a-baa9-10c967a8c807
 langcode: en
 status: true
 dependencies:
   module:
     - search
   theme:
-    - food_theme
+    - recipe_theme
 _core:
   default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
-id: food_theme_search
-theme: food_theme
-region: sidebar_first
+id: recipe_theme_search
+theme: recipe_theme
+region: navbar_branding
 weight: -1
 provider: null
 plugin: search_form_block

@@ -1,0 +1,22 @@
+uuid: 5ba872d5-aaba-40a9-8e34-05b1d2a915fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: product_url
+label: 'product url'
+type: 'canonical_entities:node'
+pattern: 'food/[node:title]'
+selection_criteria:
+  0874a729-1297-4229-89af-afd2a881da21:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0874a729-1297-4229-89af-afd2a881da21
+selection_logic: and
+weight: -5
+relationships: {  }
