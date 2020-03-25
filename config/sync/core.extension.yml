@@ -1,4 +1,5 @@
 module:
+  addtoany: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -14,6 +15,7 @@ module:
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   field: 0
   field_ui: 0
@@ -24,6 +26,7 @@ module:
   image: 0
   layout_builder: 0
   layout_discovery: 0
+  ingredient_validation: 0
   link: 0
   menu_ui: 0
   node: 0
