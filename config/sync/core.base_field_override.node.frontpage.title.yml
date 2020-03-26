@@ -8,7 +8,7 @@ id: node.frontpage.title
 field_name: title
 entity_type: node
 bundle: frontpage
-label: Frontpage
+label: 'Landing page'
 description: ''
 required: true
 translatable: true
