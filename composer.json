@@ -17,14 +17,15 @@
     "require": {
         "composer/installers": "^1.2",
         "drupal/addtoany": "^1.12",
+        "drupal/admin_toolbar": "^2.2",
         "drupal/config_installer": "^1.8",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
+        "drupal/easy_breadcrumb": "^1.12",
         "drupal/pathauto": "^1.6",
         "drupal/radix": "^4.8",
         "drupal/radix_layouts": "^4.1",
-        "drupal/easy_breadcrumb": "^1.12",
         "drush/drush": "^10.2"
     },
     "require-dev": {

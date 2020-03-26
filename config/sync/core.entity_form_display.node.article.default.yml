@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_ingredients
     - field.field.node.article.field_tags
     - field.field.node.article.field_type_of_food
+    - field.field.node.article.layout_builder__layout
     - image.style.thumbnail
     - node.type.article
   module:
@@ -123,3 +124,4 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  layout_builder__layout: true

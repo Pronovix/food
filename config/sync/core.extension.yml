@@ -1,5 +1,9 @@
 module:
   addtoany: 0
+  admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_search: 0
+  admin_toolbar_tools: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -24,9 +28,9 @@ module:
   help: 0
   history: 0
   image: 0
+  ingredient_validation: 0
   layout_builder: 0
   layout_discovery: 0
-  ingredient_validation: 0
   link: 0
   menu_ui: 0
   node: 0
