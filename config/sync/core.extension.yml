@@ -8,6 +8,7 @@ module:
   ckeditor: 0
   color: 0
   comment: 0
+  components: 0
   config: 0
   contact: 0
   contextual: 0
@@ -24,6 +25,8 @@ module:
   help: 0
   history: 0
   image: 0
+  layout_builder: 0
+  layout_discovery: 0
   ingredient_validation: 0
   link: 0
   menu_ui: 0
@@ -33,6 +36,7 @@ module:
   path: 0
   path_alias: 0
   quickedit: 0
+  radix_layouts: 0
   rdf: 0
   search: 0
   shortcut: 0
@@ -54,6 +58,8 @@ theme:
   classy: 0
   bartik: 0
   seven: 0
+  radix: 0
+  recipe_theme: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
