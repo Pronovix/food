@@ -1,0 +1,22 @@
+uuid: aba49973-4320-4fda-a5ca-edd0ce0f75ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - recipe_theme
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: recipe_theme_content
+theme: recipe_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

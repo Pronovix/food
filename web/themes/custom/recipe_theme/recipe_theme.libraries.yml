@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/recipe_theme.style.css: {}
+  js:
+    assets/js/recipe_theme.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
