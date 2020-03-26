@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.frontpage.body
-    - field.field.node.frontpage.field_image
-    - node.type.frontpage
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_image
+    - node.type.landing_page
   module:
     - image
     - layout_builder
@@ -17,8 +17,7 @@ third_party_settings:
     allow_custom: false
     enabled: true
     sections:
-      -
-        layout_id: layout_onecol
+      - layout_id: layout_onecol
         layout_settings:
           label: Hero
         components:
@@ -26,7 +25,7 @@ third_party_settings:
             uuid: 7f3a6318-09e5-44ca-b664-857f40f01db4
             region: content
             configuration:
-              id: 'field_block:node:frontpage:field_image'
+              id: 'field_block:node:landing_page:field_image'
               label: 'Hero image'
               provider: layout_builder
               label_display: '0'
@@ -36,15 +35,14 @@ third_party_settings:
                 settings:
                   image_style: extra_large
                   image_link: ''
-                third_party_settings: {  }
+                third_party_settings: {}
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+            additional: {}
             weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
+        third_party_settings: {}
+      - layout_id: layout_onecol
         layout_settings:
           label: 'Welcome text'
         components:
@@ -52,46 +50,44 @@ third_party_settings:
             uuid: 4fc26b94-5dbd-4aca-bfad-7905cb6afea5
             region: content
             configuration:
-              id: 'field_block:node:frontpage:body'
+              id: 'field_block:node:landing_page:body'
               label: Body
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: above
                 type: text_default
-                settings: {  }
-                third_party_settings: {  }
+                settings: {}
+                third_party_settings: {}
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+            additional: {}
             weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: layout_threecol_section
+        third_party_settings: {}
+      - layout_id: layout_threecol_section
         layout_settings:
           label: 'Recent recipes'
           column_widths: 33-34-33
-        components: {  }
-        third_party_settings: {  }
-      -
-        layout_id: layout_threecol_section
+        components: {}
+        third_party_settings: {}
+      - layout_id: layout_threecol_section
         layout_settings:
           label: Categories
           column_widths: 33-34-33
-        components: {  }
-        third_party_settings: {  }
-id: node.frontpage.default
+        components: {}
+        third_party_settings: {}
+id: node.landing_page.default
 targetEntityType: node
-bundle: frontpage
+bundle: landing_page
 mode: default
 content:
   body:
     label: hidden
     type: text_default
     weight: 101
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     region: content
   field_image:
     weight: 102
@@ -99,13 +95,13 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings: {}
     type: image
     region: content
   links:
     weight: 100
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     region: content
 hidden:
   addtoany: true

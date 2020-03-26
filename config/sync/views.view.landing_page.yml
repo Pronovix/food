@@ -10,8 +10,8 @@ dependencies:
     - user
 _core:
   default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
-id: frontpage
-label: Frontpage
+id: landing_page
+label: landing_page
 module: node
 description: 'All content promoted to the front page.'
 tag: default
@@ -26,7 +26,7 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: {  }
+        options: {}
       empty:
         area_text_custom:
           admin_label: ''
@@ -88,15 +88,15 @@ display:
             required: false
             use_operator: false
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: {}
           exposed: false
           field: promote
           group: 1
           group_info:
             default_group: All
-            default_group_multiple: {  }
+            default_group_multiple: {}
             description: ''
-            group_items: {  }
+            group_items: {}
             identifier: ''
             label: ''
             multiple: false
@@ -117,7 +117,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: {}
           field: status
           group: 1
           id: status
@@ -152,7 +152,7 @@ display:
               authenticated: authenticated
             reduce: false
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: {}
           is_grouped: false
           group_info:
             label: ''
@@ -163,8 +163,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: {}
+            group_items: {}
           plugin_id: language
           entity_type: node
           entity_field: langcode
@@ -196,7 +196,7 @@ display:
           distinct: false
           replica: false
           query_comment: ''
-          query_tags: {  }
+          query_tags: {}
       row:
         type: 'entity:node'
         options:
@@ -234,17 +234,17 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
+          grouping: {}
           row_class: ''
           default_row_class: true
           uses_fields: false
       title: ''
-      header: {  }
-      footer: {  }
-      relationships: {  }
-      fields: {  }
-      arguments: {  }
-      display_extenders: {  }
+      header: {}
+      footer: {}
+      relationships: {}
+      fields: {}
+      arguments: {}
+      display_extenders: {}
     display_plugin: default
     display_title: Master
     id: default
@@ -256,7 +256,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
+      tags: {}
   feed_1:
     display_plugin: feed
     id: feed_1
@@ -277,25 +277,25 @@ display:
         type: rss
         options:
           description: ''
-          grouping: {  }
+          grouping: {}
           uses_fields: false
       row:
         type: node_rss
         options:
           relationship: none
           view_mode: rss
-      display_extenders: {  }
+      display_extenders: {}
     cache_metadata:
       contexts:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
+      tags: {}
   page_1:
     display_options:
       path: node
-      display_extenders: {  }
+      display_extenders: {}
     display_plugin: page
     display_title: Page
     id: page_1
@@ -307,4 +307,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
+      tags: {}

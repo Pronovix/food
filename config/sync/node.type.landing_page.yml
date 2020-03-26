@@ -10,8 +10,8 @@ third_party_settings:
       - main
     parent: 'main:'
 name: 'Landing page'
-type: frontpage
-description: 'This should be the actual frontpage.'
+type: landing_page
+description: 'This should be the actual landing_page.'
 help: ''
 new_revision: true
 preview_mode: 1

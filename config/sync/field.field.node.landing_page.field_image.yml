@@ -4,18 +4,18 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_image
-    - node.type.frontpage
+    - node.type.landing_page
   module:
     - image
-id: node.frontpage.field_image
+id: node.landing_page.field_image
 field_name: field_image
 entity_type: node
-bundle: frontpage
+bundle: landing_page
 label: Image
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value: {}
 default_value_callback: ''
 settings:
   file_extensions: 'png gif jpg jpeg'
@@ -34,5 +34,5 @@ settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
   max_filesize: ''
   handler: 'default:file'
-  handler_settings: {  }
+  handler_settings: {}
 field_type: image

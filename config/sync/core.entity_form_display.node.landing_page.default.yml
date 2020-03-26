@@ -3,17 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.frontpage.body
-    - field.field.node.frontpage.field_image
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_image
     - image.style.thumbnail
-    - node.type.frontpage
+    - node.type.landing_page
   module:
     - image
     - path
     - text
-id: node.frontpage.default
+id: node.landing_page.default
 targetEntityType: node
-bundle: frontpage
+bundle: landing_page
 mode: default
 content:
   body:
@@ -24,49 +24,49 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings: {}
     region: content
   created:
     type: datetime_timestamp
     weight: 10
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   field_image:
     weight: 122
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
+    third_party_settings: {}
     type: image_image
     region: content
   path:
     type: path
     weight: 30
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 15
     region: content
-    third_party_settings: {  }
+    third_party_settings: {}
   status:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 120
     region: content
-    third_party_settings: {  }
+    third_party_settings: {}
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 16
     region: content
-    third_party_settings: {  }
+    third_party_settings: {}
   title:
     type: string_textfield
     weight: -5
@@ -74,7 +74,7 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings: {}
   uid:
     type: entity_reference_autocomplete
     weight: 5
@@ -84,5 +84,5 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
-    third_party_settings: {  }
-hidden: {  }
+    third_party_settings: {}
+hidden: {}

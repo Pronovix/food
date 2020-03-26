@@ -4,15 +4,15 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.frontpage.body
-    - field.field.node.frontpage.field_image
-    - node.type.frontpage
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_image
+    - node.type.landing_page
   module:
     - text
     - user
-id: node.frontpage.teaser
+id: node.landing_page.teaser
 targetEntityType: node
-bundle: frontpage
+bundle: landing_page
 mode: teaser
 content:
   body:
@@ -21,12 +21,12 @@ content:
     weight: 101
     settings:
       trim_length: 600
-    third_party_settings: {  }
+    third_party_settings: {}
     region: content
   links:
     weight: 100
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     region: content
 hidden:
   addtoany: true
