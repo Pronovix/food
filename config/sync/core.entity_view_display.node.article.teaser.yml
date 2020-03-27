@@ -62,7 +62,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  addtoany: true
   comment: true
   field_description: true
   field_tags: true
