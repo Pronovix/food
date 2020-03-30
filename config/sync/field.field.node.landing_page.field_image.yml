@@ -15,7 +15,7 @@ label: Image
 description: ''
 required: false
 translatable: true
-default_value: {}
+default_value: {  }
 default_value_callback: ''
 settings:
   file_extensions: 'png gif jpg jpeg'
@@ -34,5 +34,5 @@ settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
   max_filesize: ''
   handler: 'default:file'
-  handler_settings: {}
+  handler_settings: {  }
 field_type: image
