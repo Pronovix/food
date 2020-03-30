@@ -68,14 +68,32 @@ third_party_settings:
                 label: above
                 type: image
                 settings:
-                  image_style: ''
+                  image_style: large
                   image_link: ''
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 0
+            weight: 2
+          ff0fdcb8-3194-43ad-839e-9ac395979546:
+            uuid: ff0fdcb8-3194-43ad-839e-9ac395979546
+            region: second
+            configuration:
+              id: 'field_block:node:article:field_ingredients'
+              label: Ingredients
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
           21a11c80-e437-4d96-9242-4a2f2ff36f0d:
             uuid: 21a11c80-e437-4d96-9242-4a2f2ff36f0d
             region: second
@@ -89,24 +107,6 @@ third_party_settings:
                 type: entity_reference_label
                 settings:
                   link: true
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 0
-          ff0fdcb8-3194-43ad-839e-9ac395979546:
-            uuid: ff0fdcb8-3194-43ad-839e-9ac395979546
-            region: second
-            configuration:
-              id: 'field_block:node:article:field_ingredients'
-              label: Ingredients
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: above
-                type: basic_string
-                settings: {  }
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
@@ -187,7 +187,7 @@ third_party_settings:
               id: addtoany_block
               label: 'AddToAny buttons'
               provider: addtoany
-              label_display: visible
+              label_display: '0'
               context_mapping: {  }
             additional: {  }
             weight: 0
