@@ -1,15 +1,15 @@
-uuid: c3b9acbb-65f1-40c9-a170-73471668e32f
+uuid: 00d518d0-c9cd-43dc-9161-b1d5a490d0fe
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
+    - recipe_theme
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
-id: bartik_page_title
-theme: bartik
+id: recipe_theme_page_title
+theme: recipe_theme
 region: content
-weight: -6
+weight: -50
 provider: null
 plugin: page_title_block
 settings:

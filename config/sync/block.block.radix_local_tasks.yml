@@ -1,15 +1,15 @@
-uuid: 363f6dcc-3ecd-4e7a-91d6-f7949ee45860
+uuid: f604ff2c-2178-4f9a-92e9-bbfebf4a3b3b
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
+    - radix
 _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
-id: bartik_local_tasks
-theme: bartik
+id: radix_local_tasks
+theme: radix
 region: content
-weight: -4
+weight: -40
 provider: null
 plugin: local_tasks_block
 settings:

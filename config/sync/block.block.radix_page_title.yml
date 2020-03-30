@@ -1,15 +1,15 @@
-uuid: c3b9acbb-65f1-40c9-a170-73471668e32f
+uuid: fb450fac-7442-4bb6-9e91-5fb059985c7b
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
+    - radix
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
-id: bartik_page_title
-theme: bartik
+id: radix_page_title
+theme: radix
 region: content
-weight: -6
+weight: -50
 provider: null
 plugin: page_title_block
 settings:

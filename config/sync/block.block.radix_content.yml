@@ -1,17 +1,17 @@
-uuid: 33bd87e1-2d87-4c88-b7e8-5f5d03b4b3fe
+uuid: e7e96880-6e44-4815-8f2b-9306094762e5
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - radix
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: bartik_content
-theme: bartik
+id: radix_content
+theme: radix
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: system_main_block
 settings:

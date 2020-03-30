@@ -1,4 +1,4 @@
-uuid: e37fdbfe-7874-491a-8875-7ebbe111570c
+uuid: 8ef1ecf4-7c41-47eb-9d50-11e444219350
 langcode: en
 status: true
 dependencies:
@@ -22,16 +22,18 @@ settings:
             - Superscript
             - Subscript
             - RemoveFormat
-            - Format
         -
-          name: Justify
+          name: Spacing
           items:
             - JustifyLeft
             - JustifyCenter
-            - JustifyRight
             - JustifyBlock
-            - Indent
-            - Outdent
+            - JustifyRight
+        -
+          name: Redo
+          items:
+            - Undo
+            - Redo
         -
           name: Links
           items:
@@ -51,14 +53,7 @@ settings:
           name: Tools
           items:
             - Source
-            - Table
             - SpecialChar
-            - Maximize
-        -
-          name: Edit
-          items:
-            - Undo
-            - Redo
   plugins:
     stylescombo:
       styles: ''

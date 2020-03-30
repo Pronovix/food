@@ -1,15 +1,15 @@
-uuid: ef291ff8-a346-4777-953c-5b59d4da2a78
+uuid: edb7ae63-ef48-4057-b18c-adac078948c7
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
+    - recipe_theme
 _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
-id: bartik_local_actions
-theme: bartik
+id: recipe_theme_local_actions
+theme: recipe_theme
 region: content
-weight: -2
+weight: -20
 provider: null
 plugin: local_actions_block
 settings:

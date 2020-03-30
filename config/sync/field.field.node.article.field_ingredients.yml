@@ -10,7 +10,7 @@ field_name: field_ingredients
 entity_type: node
 bundle: article
 label: Ingredients
-description: ''
+description: "Please enter ingredients in the correct form (Amount Unit Ingredient) and one in a line.<br>\r\nFor example: <br>\r\n12 g of sugar <br>\r\n<span>100 g of flour<br>\r\n<span>1 spoon of honey <br>\r\n"
 required: true
 translatable: false
 default_value: {  }
