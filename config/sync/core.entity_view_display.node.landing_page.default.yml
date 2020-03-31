@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_image
+    - field.field.node.landing_page.field_image_hero
     - node.type.landing_page
   module:
     - image
@@ -42,6 +43,23 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
+          cba495dd-fd7f-4654-82a6-664cb488884d:
+            uuid: cba495dd-fd7f-4654-82a6-664cb488884d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:landing_page:field_image_hero'
+              formatter:
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -95,6 +113,15 @@ content:
     region: content
   field_image:
     weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_image_hero:
+    weight: 103
     label: above
     settings:
       image_style: ''
