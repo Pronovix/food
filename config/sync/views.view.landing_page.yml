@@ -10,8 +10,8 @@ dependencies:
     - user
 _core:
   default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
-id: frontpage
-label: Frontpage
+id: landing_page
+label: landing_page
 module: node
 description: 'All content promoted to the front page.'
 tag: default
