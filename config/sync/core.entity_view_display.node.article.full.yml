@@ -65,10 +65,10 @@ third_party_settings:
               provider: layout_builder
               label_display: '0'
               formatter:
-                label: above
+                label: hidden
                 type: image
                 settings:
-                  image_style: large
+                  image_style: extra_medium
                   image_link: ''
                 third_party_settings: {  }
               context_mapping:
@@ -126,7 +126,7 @@ third_party_settings:
               id: system_breadcrumb_block
               label: Breadcrumbs
               provider: system
-              label_display: visible
+              label_display: '0'
               context_mapping: {  }
             additional: {  }
             weight: 0
@@ -174,6 +174,46 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
+          a873369f-6a1b-464b-a623-9940a0511ad4:
+            uuid: a873369f-6a1b-464b-a623-9940a0511ad4
+            region: second
+            configuration:
+              id: 'field_block:user:user:name'
+              label: Name
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: user_name
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          16fc0a8f-ab75-4d8f-b39f-c826d5350c93:
+            uuid: 16fc0a8f-ab75-4d8f-b39f-c826d5350c93
+            region: second
+            configuration:
+              id: 'field_block:user:user:created'
+              label: Created
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: timestamp
+                settings:
+                  date_format: medium
+                  custom_date_format: ''
+                  timezone: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
         third_party_settings: {  }
       -
         layout_id: layout_onecol
