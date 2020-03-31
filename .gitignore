@@ -74,6 +74,3 @@ node_modules
 
 # Caches.
 .sass-cache
-
-# Twig debugging
-/web/sites/default/services.yml
