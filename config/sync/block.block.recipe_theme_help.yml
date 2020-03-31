@@ -1,0 +1,22 @@
+uuid: b37e0d55-377e-4e9e-b0fc-f5c2e6397c27
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - recipe_theme
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: recipe_theme_help
+theme: recipe_theme
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
