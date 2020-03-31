@@ -26,17 +26,20 @@ third_party_settings:
             uuid: cba495dd-fd7f-4654-82a6-664cb488884d
             region: content
             configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
               id: 'field_block:node:landing_page:field_image_hero'
+              label: 'Image hero'
+              provider: layout_builder
+              label_display: '0'
               formatter:
                 label: above
+                type: image
                 settings:
-                  image_style: ''
+                  image_style: extra_large
                   image_link: ''
                 third_party_settings: {  }
-                type: image
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
             additional: {  }
             weight: 1
         third_party_settings: {  }
