@@ -1,12 +1,9 @@
 module:
   addtoany: 0
   admin_toolbar: 0
-<<<<<<< HEAD
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
-=======
->>>>>>> 20944700117cb0573922f4d1d0cb88e8af1de3b8
   automated_cron: 0
   big_pipe: 0
   block: 0
