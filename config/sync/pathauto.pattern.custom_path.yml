@@ -1,4 +1,4 @@
-uuid: 71330574-9829-43c9-9725-6247e7fecd4a
+uuid: e5841cb4-d066-4895-93c0-fe4023c24833
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ label: 'custom path'
 type: 'canonical_entities:node'
 pattern: 'food/[node:title]'
 selection_criteria:
-  4462c04e-d774-40f1-9b6f-5dc83a9a0b35:
+  82c1a527-b81a-4388-8f8d-9c8321733d97:
     id: node_type
     bundles:
       article: article
     negate: false
     context_mapping:
       node: node
-    uuid: 4462c04e-d774-40f1-9b6f-5dc83a9a0b35
+    uuid: 82c1a527-b81a-4388-8f8d-9c8321733d97
 selection_logic: and
 weight: -5
 relationships: {  }
