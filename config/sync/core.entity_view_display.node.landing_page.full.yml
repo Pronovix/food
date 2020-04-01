@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.landing_page.field_image_hero
     - node.type.landing_page
   module:
-    - image
     - layout_builder
     - text
     - user
@@ -28,22 +27,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_image:
-    type: image
-    weight: 1
-    region: content
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   addtoany: true
   field_image_hero: true
