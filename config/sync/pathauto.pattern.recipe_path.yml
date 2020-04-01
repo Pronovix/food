@@ -1,22 +1,22 @@
-uuid: e5841cb4-d066-4895-93c0-fe4023c24833
+uuid: afac3458-37ba-4e36-9fe2-c296d62676f6
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: custom_path
-label: 'custom path'
+id: recipe_path
+label: recipe_path
 type: 'canonical_entities:node'
 pattern: 'food/[node:title]'
 selection_criteria:
-  82c1a527-b81a-4388-8f8d-9c8321733d97:
+  06ecd62e-6914-4498-8c5c-bc05e8a9ae20:
     id: node_type
     bundles:
       article: article
     negate: false
     context_mapping:
       node: node
-    uuid: 82c1a527-b81a-4388-8f8d-9c8321733d97
+    uuid: 06ecd62e-6914-4498-8c5c-bc05e8a9ae20
 selection_logic: and
 weight: -5
 relationships: {  }
