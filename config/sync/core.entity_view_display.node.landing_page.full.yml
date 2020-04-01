@@ -1,11 +1,11 @@
 uuid: 93da2bd3-745c-4b89-b8de-b34b598959ce
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.landing_page.body
-    - field.field.node.landing_page.field_image
+    - field.field.node.landing_page.field_image_hero
     - node.type.landing_page
   module:
     - image
@@ -24,7 +24,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 101
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -38,9 +38,12 @@ content:
       image_link: ''
     third_party_settings: {  }
   links:
-    weight: 2
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   addtoany: true
+  field_image_hero: true
