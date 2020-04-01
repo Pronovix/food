@@ -17,6 +17,8 @@
 
   <rule ref="DrupalPractice"/>
 
+  <rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired" />
+
   <!-- SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable is better than this rule. -->
   <rule ref="DrupalPractice.CodeAnalysis.VariableAnalysis.UnusedVariable">
     <severity>0</severity>
