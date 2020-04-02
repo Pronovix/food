@@ -1,0 +1,5 @@
+name: Product Uploader
+type: module
+description: Assign or remove product uploader role
+package: Custom
+core: 8.x
