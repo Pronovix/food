@@ -1,0 +1,32 @@
+<?php
+
+namespace Drupal\usergreeting;
+
+use Drupal\Component\Datetime\TimeInterface;
+
+/**
+ * GreetingTime is a greeting service for users
+ * dependent on the time of the day
+ */
+class greetingTime {
+    private $greeting = '';
+
+  /**
+   * {@inheritdoc}
+   */
+  public function userGreeting () {
+    $time_output = gmdate('i', \Drupal::time()->getRequestTime());
+
+    if ($time_output >= 5 || $time_output < 12) {
+      $greeting = "Good Morning ";
+    }
+    if ($time_output >= 12 || $time_output < 17) {
+      $greeting = "Good Afternoon ";
+    }
+    if ($time_output >= 17 || $time_output < 5) {
+      $greeting = "Good Evening ";
+    }
+    return $greeting;
+  }
+
+}

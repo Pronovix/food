@@ -1,0 +1,20 @@
+uuid: 101012d6-1be9-46be-a824-e290a798e9fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - usergreeting
+  theme:
+    - recipe_theme
+id: usergreeting
+theme: recipe_theme
+region: navbar_left
+weight: 0
+provider: null
+plugin: usergreeting_block
+settings:
+  id: usergreeting_block
+  label: Usergreeting
+  provider: usergreeting
+  label_display: visible
+visibility: {  }
