@@ -20,9 +20,9 @@ class UsergreetingBlock extends BlockBase {
    */
   public function build() {
     $username = $this->t(\Drupal::currentUser()->getUsername());
-    $greetuser = $this->t(\Drupal::service('usergreeting.greeting')->userGreeting());
-    //$greetuser->userGreeting();
+    $greetuser = $this->t(\Drupal::service('usergreeting.greeting')->greetingMessage());
     
-    return array ('#markup' => $greetuser . $username . "!");
+    return array('#markup' => $greetuser . $username . '!');
   }
+  
 }

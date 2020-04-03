@@ -2,19 +2,17 @@
 
 namespace Drupal\usergreeting;
 
-use Drupal\Component\Datetime\TimeInterface;
-
 /**
  * GreetingTime is a greeting service for users
  * dependent on the time of the day
  */
-class greetingTime {
+class GreetingTime {
     private $greeting = '';
 
   /**
    * {@inheritdoc}
    */
-  public function userGreeting () {
+  public function greetingMessage () {
     $time_output = gmdate('i', \Drupal::time()->getRequestTime());
 
     if ($time_output >= 5 || $time_output < 12) {
