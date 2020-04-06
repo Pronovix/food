@@ -5,11 +5,9 @@ declare(strict_types = 1);
 namespace Drupal\usergreeting;
 
 /**
- * GreetingTime is a greeting service for users
- * dependent on the time of the day.
+ * Provides a greeting service for users dependent on the time of  day.
  */
 class GreetingTime {
-  private $greeting = '';
 
   /**
    * {@inheritdoc}
