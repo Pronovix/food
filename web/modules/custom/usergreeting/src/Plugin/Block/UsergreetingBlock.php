@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Drupal\usergreeting\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Usergreeting' Block.
@@ -19,9 +20,9 @@ use Drupal\Core\Session\AccountInterface;
  */
 class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-   /**
+  /**
    *
-   * @var AccountInterface $account
+   * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
@@ -31,7 +32,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    * @param mixed $plugin_definition
    * @param \Drupal\Core\Session\AccountInterface $account
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountInterface $account) {
+  public function __construct(array $configuration, string $plugin_id, $plugin_definition, AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->account = $account;
   }
@@ -44,7 +45,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    *
    * @return static
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, string $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
       $container->get('current_user')
     );
@@ -57,10 +58,10 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
     $build = [];
     $greetuser = $this->t(\Drupal::service('usergreeting.greeting')->greetingMessage());
     $uid = $this->account->getDisplayname();
-    
+
     $build['current_user']['#markup'] = '<p>' . $greetuser . $uid . '!</p>';
 
     return $build;
   }
-  
+
 }
