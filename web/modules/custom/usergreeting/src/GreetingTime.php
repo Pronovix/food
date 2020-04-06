@@ -13,15 +13,15 @@ class GreetingTime {
    * {@inheritdoc}
    */
   public function greetingMessage () {
-    $time_output = gmdate('i', \Drupal::time()->getRequestTime());
+    $time_output = intval(date('H', \Drupal::time()->getRequestTime()));
 
-    if ($time_output >= 5 || $time_output < 12) {
+    if ($time_output >= 5 && $time_output < 12) {
       $greeting = "Good Morning ";
     }
-    if ($time_output >= 12 || $time_output < 17) {
+    elseif ($time_output < 17) {
       $greeting = "Good Afternoon ";
     }
-    if ($time_output >= 17 || $time_output < 5) {
+    else {
       $greeting = "Good Evening ";
     }
     return $greeting;
