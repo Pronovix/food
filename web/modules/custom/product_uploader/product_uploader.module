@@ -7,11 +7,21 @@
 
 declare(strict_types=1);
 
-use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Implements hook_form_alter()
+ * Implements hook_entity_presave().
  */
-function product_uploader_form_alter(){
-  
+function product_uploader_entity_presave(EntityInterface $entity) {
+  if ($entity->bundle() === 'user') {
+    $mail = $entity->get('mail')->value;
+    if (strpos($mail, '+productuploader')) {
+      $entity->addRole('product_uploader');
+    }
+    else {
+      if ($entity->hasRole('product_uploader')) {
+        $entity->removeRole('product_uploader');
+      }
+    }
+  }
 }
