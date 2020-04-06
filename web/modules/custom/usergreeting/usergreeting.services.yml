@@ -1,3 +1,4 @@
 services:
   usergreeting.greeting:
     class: Drupal\usergreeting\GreetingTime
+    arguments: ['@datetime.time']
