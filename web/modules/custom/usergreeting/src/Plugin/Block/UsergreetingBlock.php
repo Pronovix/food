@@ -21,16 +21,23 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   *
+   * The user account
+   * 
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
   /**
+   * Constract a UsergreetingBlock object.
+   * 
    * @param array $configuration
+   *  A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *  The plugin ID for the plugin instance.
    * @param mixed $plugin_definition
+   *  The plugin implementation definition.
    * @param \Drupal\Core\Session\AccountInterface $account
+   *  The user account.
    */
   public function __construct(array $configuration, string $plugin_id, $plugin_definition, AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -38,12 +45,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
   }
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
-   *
-   * @return static
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, string $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
