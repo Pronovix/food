@@ -6,7 +6,6 @@ namespace Drupal\usergreeting\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\usergreeting\GreetingTime;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -20,13 +19,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
-  /**
-   * The user account.
-   *
-   * @var \Drupal\Core\Session\AccountInterface
-   */
-  protected $account;
 
   /**
    * The greeting message.
@@ -44,14 +36,11 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    *   The plugin ID for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Session\AccountInterface $account
-   *   The user account.
    * @param \Drupal\usergreeting\GreetingTime $greeting
    *   The greeting message.
    */
-  public function __construct(array $configuration, string $plugin_id, $plugin_definition, AccountInterface $account, GreetingTime $greeting) {
+  public function __construct(array $configuration, string $plugin_id, $plugin_definition, GreetingTime $greeting) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->account = $account;
     $this->greeting = $greeting;
   }
 
@@ -60,7 +49,6 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
-      $container->get('current_user'),
       $container->get('usergreeting.greeting')
     );
   }
@@ -70,10 +58,9 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public function build() {
     $build = [];
-    $uid = $this->account->getDisplayname();
     $greetuser = $this->greeting->greetingMessage();
 
-    $build['#markup'] = '<p>' . $greetuser . $uid . '!</p>';
+    $build['#markup'] = '<p>' . $greetuser . '</p>';
 
     return $build;
   }
