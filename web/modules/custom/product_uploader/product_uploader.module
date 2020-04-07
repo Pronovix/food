@@ -5,23 +5,19 @@
  * Contains hook for Product Uploader module.
  */
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Implements hook_entity_presave().
+ * Implements hook_ENTITY_TYPE_presave().
  */
-function product_uploader_entity_presave(EntityInterface $entity) {
-  if ($entity->bundle() === 'user') {
-    $mail = $entity->get('mail')->value;
-    if (strpos($mail, '+productuploader')) {
-      $entity->addRole('product_uploader');
-    }
-    else {
-      if ($entity->hasRole('product_uploader')) {
-        $entity->removeRole('product_uploader');
-      }
-    }
+function product_uploader_user_presave(EntityInterface $entity): void {
+  $mail = $entity->get('mail')->value;
+  if (strpos($mail, '+productuploader')) {
+    $entity->addRole('product_uploader');
+  }
+  else {
+    $entity->removeRole('product_uploader');
   }
 }
