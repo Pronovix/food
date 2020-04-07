@@ -14,12 +14,12 @@ class GreetingTime {
   /**
    * The user account.
    *
-   * @var \Drupal\usergreeting\Drupal\Component\Datetime\TimeInterface
+   * @var \Drupal\Component\Datetime\TimeInterface
    */
   protected $timeOutput;
 
   /**
-   * Construct the Timeinterface object.
+   * GreetingTime constructor.
    *
    * @param \Drupal\Component\Datetime\TimeInterface $timeOutput
    *   The timestamp output.
@@ -29,10 +29,13 @@ class GreetingTime {
   }
 
   /**
-   * {@inheritdoc}
+   * Returns the greeting message.
+   *
+   * @return \Drupal\usergreeting\greetingMessage
+   *   The greeting message output.
    */
-  public function greetingMessage() {
-    $time_output = intval(date('H', $this->timeOutput->getRequestTime()));
+  final public function greetingMessage(string $greeting = NULL): greetingMessage {
+    $time_output = (int) date_default_timezone_get('H', $this->timeOutput->getRequestTime());
 
     if ($time_output >= 5 && $time_output < 12) {
       $greeting = 'Good Morning ';

@@ -29,7 +29,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
   protected $account;
 
   /**
-   * The user account.
+   * The greeting message.
    *
    * @var \Drupal\usergreeting\GreetingTime
    */
