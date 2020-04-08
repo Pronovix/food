@@ -5,8 +5,8 @@ features:
   favicon: true
 logo:
   use_default: false
-  path: 'public://logo_0.png'
+  path: 'public://logo_1_0.png'
 favicon:
   use_default: false
-  path: 'public://logo.png'
+  path: 'public://logo_2_0.png'
   mimetype: image/png
