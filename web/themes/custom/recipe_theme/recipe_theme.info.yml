@@ -6,6 +6,7 @@ core: 8.x
 engine: twig
 type: theme
 base theme: radix
+logo: logo.png
 
 regions:
   navbar_branding: Navbar branding
