@@ -26,11 +26,13 @@
         "drupal/pathauto": "^1.6",
         "drupal/radix": "^4.8",
         "drupal/radix_layouts": "^4.1",
+        "drupal/search_api": "^1.15",
         "drush/drush": "^10.2"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
         "drupal/coder": "^8.3",
+        "drupal/devel": "^2.1",
         "slevomat/coding-standard": "5.0"
     },
     "conflict": {
