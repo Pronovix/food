@@ -1,0 +1,18 @@
+uuid: 60ee609e-a23f-4d67-b2a2-ae1383d97bac
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Catalog
+type: catalog
+description: 'Use Catalog for create a page where you can list your products.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
