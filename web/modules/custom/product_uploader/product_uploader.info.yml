@@ -1,0 +1,8 @@
+name: Product Uploader
+type: module
+description: Assign or remove product uploader role
+package: Custom
+core_version_requirement: ^8.8
+dependencies:
+  - drupal:node
+  - drupal:field
