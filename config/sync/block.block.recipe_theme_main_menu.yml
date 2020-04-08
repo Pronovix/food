@@ -13,7 +13,7 @@ _core:
 id: recipe_theme_main_menu
 theme: recipe_theme
 region: navbar_branding
-weight: -5
+weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:

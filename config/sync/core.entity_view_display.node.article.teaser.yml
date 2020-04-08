@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.article.field_ingredients
     - field.field.node.article.field_tags
     - field.field.node.article.field_type_of_food
-    - field.field.node.article.layout_builder__layout
     - image.style.medium
     - node.type.article
   module:
@@ -67,4 +66,3 @@ hidden:
   comment: true
   field_description: true
   field_tags: true
-  layout_builder__layout: true

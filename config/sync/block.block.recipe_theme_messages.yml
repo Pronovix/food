@@ -11,7 +11,7 @@ _core:
 id: recipe_theme_messages
 theme: recipe_theme
 region: navbar_branding
-weight: -4
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

@@ -1,12 +1,13 @@
-uuid: b11493ed-029b-4616-a795-2a64321f5b9c
+uuid: 25e3b9c9-7bd9-4c1f-ad93-c09eaccd2b4b
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - user
     - search_api
   config:
-    - field.storage.node.field_description
+    - field.storage.node.field_tags
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
 _core:
@@ -16,14 +17,40 @@ name: 'Default content index'
 description: 'Default content index created by the Database Search Defaults module'
 read_only: false
 field_settings:
-  field_description:
-    label: Description
+  author:
+    label: 'Author name'
     datasource_id: 'entity:node'
-    property_path: field_description
-    type: text
+    property_path: 'uid:entity:name'
+    type: string
+    dependencies:
+      module:
+        - node
+        - user
+        - user
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
     dependencies:
       config:
-        - field.storage.node.field_description
+        - field.storage.node.field_tags
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -90,9 +117,8 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: false
-      selected:
-        - article
+      default: true
+      selected: {  }
     languages:
       default: true
       selected: {  }
@@ -215,6 +241,6 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: default_server
