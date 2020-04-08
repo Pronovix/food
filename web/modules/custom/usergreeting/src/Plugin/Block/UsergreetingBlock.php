@@ -60,7 +60,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
     $build = [];
     $greetuser = $this->greeting->greetingMessage();
 
-    $build['#markup'] = '<p>' . $greetuser . '</p>';
+    $build['greetuser'] = $greetuser;
 
     return $build;
   }

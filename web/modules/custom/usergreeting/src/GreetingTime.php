@@ -7,6 +7,7 @@ namespace Drupal\usergreeting;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\StringTranslation\TranslationInterface;
 
 /**
  * Provides a greeting service for users dependent on the time of  day.
@@ -30,16 +31,26 @@ final class GreetingTime {
   protected $timeOutput;
 
   /**
+   * The string to translation.
+   *
+   * @var \Drupal\usergreeting\Drupal\Core\StringTranslation\TranslationInterface
+   */
+  protected $stringTranslation;
+
+  /**
    * GreetingTime constructor.
    *
    * @param \Drupal\Component\Datetime\TimeInterface $timeOutput
    *   The timestamp output.
    * @param \Drupal\Core\Session\AccountInterface $account
    *   The user account.
+   * @param \Drupal\Core\StringTranslation\TranslationInterface $stringTranslation
+   *   The sentences to be translated.
    */
-  public function __construct(TimeInterface $timeOutput, AccountInterface $account) {
+  public function __construct(TimeInterface $timeOutput, AccountInterface $account, TranslationInterface $stringTranslation) {
     $this->timeOutput = $timeOutput;
     $this->account = $account;
+    $this->stringTranslation = $stringTranslation;
   }
 
   /**
@@ -48,9 +59,8 @@ final class GreetingTime {
    * @return string
    *   The greeting message output.
    */
-  public function greetingMessage(): string {
+  public function greetingMessage(): array {
     $time_output = (int) date('G', $this->timeOutput->getRequestTime());
-    $user_displayname = $this->account->getDisplayname();
 
     if ($time_output >= 5 && $time_output < 12) {
       $greeting = $this->t('Good Morning');
@@ -61,7 +71,35 @@ final class GreetingTime {
     else {
       $greeting = $this->t('Good Evening');
     }
-    return implode(' ', [$greeting, $user_displayname]) . '!';
+
+    $time_zone = $this->account->getTimeZone();
+    $your_timezone = $this->t('Your timezone is:');
+    $time_zone = implode(' ', [$your_timezone, $time_zone]);
+
+    return [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => $greeting,
+      '#cache' => [
+        'contexts' => [
+          'user',
+        ],
+      ],
+      'username' => [
+        '#theme' => 'username',
+        '#account' => $this->account,
+      ],
+      'felkialtojel' => [
+        '#plain_text' => '!',
+      ],
+      'time_zone' => [
+        '#type' => 'html_tag',
+        '#tag' => 'p',
+        '#value' => $time_zone,
+      ],
+
+    ];
+
   }
 
 }
