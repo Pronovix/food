@@ -4,9 +4,9 @@ features:
   comment_user_verification: true
   favicon: true
 logo:
-  use_default: false
+  use_default: true
   path: 'public://logo_1_0.png'
 favicon:
-  use_default: false
+  use_default: true
   path: 'public://logo_2_0.png'
   mimetype: image/png
