@@ -447,6 +447,10 @@ display:
         type: normal
         title: Catalog
         menu_name: main
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
