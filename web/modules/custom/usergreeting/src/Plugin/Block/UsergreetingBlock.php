@@ -62,7 +62,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
 
     $build['greetuser'] = $greetuser;
 
-    // $build ['#cache']['max-age'] = 0;
+    $build ['#cache']['max-age'] = 0;
     return $build;
 
   }
