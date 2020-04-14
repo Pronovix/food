@@ -72,16 +72,13 @@ final class GreetingTime {
       $greeting = $this->t('Good Evening');
     }
 
-    $time_zone = $this->account->getTimeZone();
-    $your_timezone = $this->t('Your timezone is:');
-    $time_zone = implode(' ', [$your_timezone, $time_zone]);
-
     return [
       '#type' => 'html_tag',
       '#tag' => 'p',
       '#value' => $greeting,
       '#cache' => [
         'contexts' => [
+          'timezone',
           'user',
         ],
       ],
@@ -89,15 +86,9 @@ final class GreetingTime {
         '#theme' => 'username',
         '#account' => $this->account,
       ],
-      'felkialtojel' => [
+      'exclamiation_mark' => [
         '#plain_text' => '!',
       ],
-      'time_zone' => [
-        '#type' => 'html_tag',
-        '#tag' => 'p',
-        '#value' => $time_zone,
-      ],
-
     ];
 
   }
