@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_description
     - field.storage.node.field_image
-    - image.style.thumbnail
+    - image.style.medium
     - search_api.index.default_index
     - system.menu.main
   module:
@@ -73,8 +73,8 @@ display:
           columns: 3
           automatic_width: true
           alignment: horizontal
-          col_class_default: true
-          col_class_custom: ''
+          col_class_default: false
+          col_class_custom: 'col-3 views-col'
           row_class_default: true
           row_class_custom: ''
       row:
@@ -116,7 +116,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h3
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -202,7 +202,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: thumbnail
+            image_style: medium
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -274,7 +274,7 @@ display:
           click_sort_column: value
           type: text_trimmed
           settings:
-            trim_length: 60
+            trim_length: 100
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -304,7 +304,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: ''
             make_link: false
             path: ''
