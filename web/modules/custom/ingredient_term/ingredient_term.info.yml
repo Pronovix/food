@@ -1,0 +1,7 @@
+name: Ingredient Term
+type: module
+description: Save the Ingredients into a Taxonomy Term
+core_version_requirement: ^8.8
+dependencies:
+  - drupal:node
+  - drupal:field
