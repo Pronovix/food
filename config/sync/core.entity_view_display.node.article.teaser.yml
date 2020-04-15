@@ -68,4 +68,3 @@ hidden:
   field_description: true
   field_tags: true
   layout_builder__layout: true
-  search_api_excerpt: true
