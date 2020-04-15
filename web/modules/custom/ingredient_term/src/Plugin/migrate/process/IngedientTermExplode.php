@@ -12,13 +12,14 @@ namespace Drupal\ingredient_term\Plugin\migrate\process;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
+use Drupal\ingredient_validation;
 
 /**
  * @MigrateProcessPlugin(
  *   id = "explode",
  * )
  */
-class Explode extends ProcessPluginBase {
+class IngredientTermExplode extends ProcessPluginBase {
 
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $value = $fields['field_ingredients'];
