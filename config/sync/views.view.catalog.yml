@@ -448,7 +448,7 @@ display:
         title: Catalog
         menu_name: main
       cache:
-        type: search_api_tag
+        type: none
         options: {  }
       defaults:
         cache: false
