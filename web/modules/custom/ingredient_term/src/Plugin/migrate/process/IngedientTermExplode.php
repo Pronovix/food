@@ -9,10 +9,9 @@ declare(strict_types = 1);
 
 namespace Drupal\ingredient_term\Plugin\migrate\process;
 
-use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
+use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
-use Drupal\ingridient_validation;
 
 /**
  * @MigrateProcessPlugin(
@@ -20,9 +19,11 @@ use Drupal\ingridient_validation;
  * )
  */
 class Explode extends ProcessPluginBase {
+
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-  	$value = $fields['field_ingredients'];
+    $value = $fields['field_ingredients'];
     $ingredients[] = explode($this->configuration[' '], $value);
     return $ingredients[];
   }
+
 }
