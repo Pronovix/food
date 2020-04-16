@@ -62,10 +62,10 @@ final class GreetingTime {
   public function greetingMessage(): array {
     $time_output = (int) date('G', $this->timeOutput->getRequestTime());
 
-    if ($time_output >= 5 && $time_output < 12) {
+    if ($time_output >= \Drupal::config('usegreeting.settings')->get('morning_start') && $time_output < \Drupal::config('usegreeting.settings')->get('afernoon_start')) {
       $greeting = $this->t('Good Morning');
     }
-    elseif ($time_output >= 12 && $time_output < 18) {
+    elseif ($time_output >= \Drupal::config('usegreeting.settings')->get('afernoon_start') && $time_output < \Drupal::config('usegreeting.settings')->get('evening_start')) {
       $greeting = $this->t('Good Afternoon');
     }
     else {

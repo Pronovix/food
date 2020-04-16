@@ -1,0 +1,4 @@
+usergreeting_defaults:
+  morning_start: 5
+  afernoon_start: 12
+  evening_start: 18
