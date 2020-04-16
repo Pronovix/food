@@ -1,0 +1,6 @@
+name: Usergreeting
+type: module
+description: Greetings the user with in the current time of the day
+core_version_requirement: ^8.8
+dependencies:
+  - drupal:block

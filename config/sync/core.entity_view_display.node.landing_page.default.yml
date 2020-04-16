@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_image_hero
     - node.type.landing_page
+    - views.view.recent_recipes
   module:
     - image
     - layout_builder
     - layout_discovery
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -68,11 +70,23 @@ third_party_settings:
             weight: 0
         third_party_settings: {  }
       -
-        layout_id: layout_threecol_section
+        layout_id: layout_onecol
         layout_settings:
-          label: 'Recent recipes'
-          column_widths: 33-34-33
-        components: {  }
+          label: Recent
+        components:
+          ad699910-edc1-4aee-b502-229876bd735a:
+            uuid: ad699910-edc1-4aee-b502-229876bd735a
+            region: content
+            configuration:
+              id: 'views_block:recent_recipes-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: layout_threecol_section
