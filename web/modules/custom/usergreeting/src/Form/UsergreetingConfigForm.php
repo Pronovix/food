@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Drupal\usergreeting\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
@@ -58,32 +60,32 @@ class UsergreetingConfigForm extends ConfigFormBase {
   }
 
   /**
-  * {@inheritdoc}
-  */
-  public function validateForm (array &$form, FormStateInterface $form_state) {
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
     $morning = $form_state->getValue('morning_start');
     $afternoon = $form_state->getValue('afernoon_start');
     $evening = $form_state->getValue('evening_start');
 
     if ($morning == $afternoon) {
       $form_state->setErrorByName('morning_start', $this->t('The start point of morning can not be the same like the start point of afternoon'));
-      }
+    }
 
     if ($afternoon == $evening) {
       $form_state->setErrorByName('afernoon_start', $this->t('The start point of afternoon can not be the same like the start point of evening'));
-      }
+    }
 
     if ($evening == $morning) {
       $form_state->setErrorByName('evening_start', $this->t('The start point of evening can not be the same like the start point of morning'));
-      }
+    }
 
     if ($morning > $afternoon || $morning > $evening) {
       $form_state->setErrorByName('morning_start', $this->t('The value of morning has to be less than the value of afternoon or evening'));
-      }
-    
+    }
+
     if ($afternoon > $evening) {
       $form_state->setErrorByName('afernoon_start', $this->t('The value of afternoon has to be less than the value of evening'));
-      } 
+    }
   }
 
   /**
@@ -96,7 +98,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
       ->set('evening_start', $form_state->getValue('evening_start'))
       ->save();
 
-      parent::submitForm($form, $form_state);
+    parent::submitForm($form, $form_state);
   }
 
 }
