@@ -2,14 +2,15 @@ uuid: b11493ed-029b-4616-a795-2a64321f5b9c
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
+    - search_api
+    - taxonomy
   config:
+    - field.storage.node.field_description
     - field.storage.node.field_type_of_food
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
-  module:
-    - search_api
-    - node
-    - taxonomy
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: default_index
@@ -17,6 +18,14 @@ name: 'Default content index'
 description: 'Default content index created by the Database Search Defaults module'
 read_only: false
 field_settings:
+  field_description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description
   field_type_of_food:
     label: 'Type of food'
     datasource_id: 'entity:node'
@@ -36,6 +45,46 @@ field_settings:
         'entity:node':
           article: search_index
           page: search_index
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: 'Authored by'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:
