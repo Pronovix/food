@@ -2,15 +2,15 @@ uuid: b11493ed-029b-4616-a795-2a64321f5b9c
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
-    - search_api
-    - taxonomy
   config:
     - field.storage.node.field_description
     - field.storage.node.field_type_of_food
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
+  module:
+    - node
+    - search_api
+    - taxonomy
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: default_index
@@ -141,6 +141,7 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
+      - title
     weights:
       preprocess_index: -5
       preprocess_query: -8
