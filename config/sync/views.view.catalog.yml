@@ -442,6 +442,7 @@ display:
         type: normal
         title: Catalog
         menu_name: main
+        weight: -49
       cache:
         type: none
         options: {  }

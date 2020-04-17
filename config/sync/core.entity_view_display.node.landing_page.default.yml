@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_image_hero
     - node.type.landing_page
-    - views.view.recent_recipes
+    - views.view.recipe_list
   module:
     - image
     - layout_builder
@@ -74,11 +74,11 @@ third_party_settings:
         layout_settings:
           label: Recent
         components:
-          ad699910-edc1-4aee-b502-229876bd735a:
-            uuid: ad699910-edc1-4aee-b502-229876bd735a
+          b3d7ddb8-2d7b-43ed-9c8f-a991d5160282:
+            uuid: b3d7ddb8-2d7b-43ed-9c8f-a991d5160282
             region: content
             configuration:
-              id: 'views_block:recent_recipes-block_1'
+              id: 'views_block:recipe_list-block_2'
               label: ''
               provider: views
               label_display: visible
