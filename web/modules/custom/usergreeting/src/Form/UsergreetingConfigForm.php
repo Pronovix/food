@@ -38,6 +38,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
       '#max' => 23,
       '#title' => $this->t('Set the start point of greeting "Good Morning", it will also be the end point of greeting "Good Evening"'),
       '#default_value' => $config->get('morning_start'),
+      '#required' => TRUE,
     ];
 
     $form['usegreeting_settings']['afernoon_start'] = [
@@ -46,6 +47,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
       '#max' => 23,
       '#title' => $this->t('Set the start point of greeting "Good Afternoon", it will also be the end point of greeting "Good Morning"'),
       '#default_value' => $config->get('afernoon_start'),
+      '#required' => TRUE,
     ];
 
     $form['usegreeting_settings']['evening_start'] = [
@@ -54,6 +56,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
       '#max' => 23,
       '#title' => $this->t('Set the start point of greeting "Good Evening", it will also be the end point of greeting "Good Afternoon"'),
       '#default_value' => $config->get('evening_start'),
+      '#required' => TRUE,
     ];
 
     return parent::buildForm($form, $form_state);
