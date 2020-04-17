@@ -3,11 +3,162 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_introduction
     - field.field.user.user.user_picture
     - image.style.thumbnail
+    - system.menu.account
+    - system.menu.footer
+    - views.view.recipe_list
   module:
     - image
+    - layout_builder
+    - layout_discovery
+    - radix_layouts
+    - system
+    - text
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: radix_mccoppin
+        layout_settings:
+          label: User
+        components:
+          3f91534b-ccac-484c-a1a3-75d25a6f62e8:
+            uuid: 3f91534b-ccac-484c-a1a3-75d25a6f62e8
+            region: column2
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_first_name'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 2
+          303d83ab-0fc3-467b-9983-6d98eb1d7e45:
+            uuid: 303d83ab-0fc3-467b-9983-6d98eb1d7e45
+            region: column2
+            configuration:
+              id: 'field_block:user:user:user_picture'
+              label: Picture
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: medium
+                  image_link: content
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          a55d2184-6836-4c3f-a928-af30d0b7644a:
+            uuid: a55d2184-6836-4c3f-a928-af30d0b7644a
+            region: column2
+            configuration:
+              id: 'field_block:user:user:name'
+              label: Name
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d8d87fc7-43ae-4d5c-b1b2-e7dbbf5fbe19:
+            uuid: d8d87fc7-43ae-4d5c-b1b2-e7dbbf5fbe19
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_introduction'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Uploaded
+        components:
+          98ad3b74-7465-4e14-9a6c-99a21ecb66ed:
+            uuid: 98ad3b74-7465-4e14-9a6c-99a21ecb66ed
+            region: content
+            configuration:
+              id: 'views_block:recipe_list-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Footer
+        components:
+          f398a0b0-4a0e-42a0-85dd-012f64740e2a:
+            uuid: f398a0b0-4a0e-42a0-85dd-012f64740e2a
+            region: content
+            configuration:
+              id: 'system_menu_block:footer'
+              label: Footer
+              provider: system
+              label_display: '0'
+              level: 1
+              depth: 0
+              expand_all_items: false
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          9c6e6c6d-781f-46da-857b-7c90504afd9d:
+            uuid: 9c6e6c6d-781f-46da-857b-7c90504afd9d
+            region: content
+            configuration:
+              id: 'system_menu_block:account'
+              label: 'User account menu'
+              provider: system
+              label_display: '0'
+              level: 1
+              depth: 0
+              expand_all_items: false
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -15,8 +166,20 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  member_for:
-    weight: 5
+  field_first_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_introduction:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   user_picture:
     type: image
@@ -28,4 +191,5 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  member_for: true
   search_api_excerpt: true

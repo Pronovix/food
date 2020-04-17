@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_description
     - field.storage.node.field_image
-    - image.style.thumbnail
+    - image.style.medium
     - search_api.index.default_index
     - system.menu.main
   module:
@@ -67,16 +67,11 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: grid
+        type: default
         options:
           grouping: {  }
-          columns: 3
-          automatic_width: true
-          alignment: horizontal
-          col_class_default: true
-          col_class_custom: ''
-          row_class_default: true
-          row_class_custom: ''
+          row_class: ''
+          default_row_class: false
       row:
         type: fields
       fields:
@@ -116,7 +111,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h3
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -202,7 +197,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: thumbnail
+            image_style: medium
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -274,7 +269,7 @@ display:
           click_sort_column: value
           type: text_trimmed
           settings:
-            trim_length: 60
+            trim_length: 100
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -304,7 +299,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: ''
             make_link: false
             path: ''
@@ -447,6 +442,12 @@ display:
         type: normal
         title: Catalog
         menu_name: main
+        weight: -49
+      cache:
+        type: none
+        options: {  }
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,21 @@
+uuid: 359e1f29-d4db-4859-802b-eb79e0f14447
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_introduction
+  module:
+    - text
+    - user
+id: user.user.field_introduction
+field_name: field_introduction
+entity_type: user
+bundle: user
+label: Introduction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

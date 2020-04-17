@@ -1,0 +1,12 @@
+uuid: d311cfc1-400c-4515-b479-ec6a35fa6684
+langcode: en
+status: true
+dependencies: {  }
+id: product_uploader
+label: 'Product uploader'
+weight: 3
+is_admin: null
+permissions:
+  - 'create article content'
+  - 'delete own article content'
+  - 'edit own article content'

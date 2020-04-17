@@ -174,31 +174,12 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          a873369f-6a1b-464b-a623-9940a0511ad4:
-            uuid: a873369f-6a1b-464b-a623-9940a0511ad4
+          7ec8d3c7-6425-4eb3-9cbf-4202d02312e1:
+            uuid: 7ec8d3c7-6425-4eb3-9cbf-4202d02312e1
             region: second
             configuration:
-              id: 'field_block:user:user:name'
-              label: Name
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: above
-                type: user_name
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: '@user.current_user_context:current_user'
-                view_mode: view_mode
-            additional: {  }
-            weight: 1
-          16fc0a8f-ab75-4d8f-b39f-c826d5350c93:
-            uuid: 16fc0a8f-ab75-4d8f-b39f-c826d5350c93
-            region: second
-            configuration:
-              id: 'field_block:user:user:created'
-              label: Created
+              id: 'field_block:node:article:changed'
+              label: Changed
               provider: layout_builder
               label_display: '0'
               formatter:
@@ -210,10 +191,28 @@ third_party_settings:
                   timezone: ''
                 third_party_settings: {  }
               context_mapping:
-                entity: '@user.current_user_context:current_user'
+                entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: 5
+          55eab3c8-3712-4a3b-9277-6f6c26ca2de7:
+            uuid: 55eab3c8-3712-4a3b-9277-6f6c26ca2de7
+            region: second
+            configuration:
+              id: 'field_block:node:article:uid'
+              label: 'Authored by'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: author
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 4
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -229,6 +228,32 @@ third_party_settings:
               provider: addtoany
               label_display: '0'
               context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Comment
+        components:
+          30fabf72-7e92-44b8-9cd2-018e8b28070a:
+            uuid: 30fabf72-7e92-44b8-9cd2-018e8b28070a
+            region: content
+            configuration:
+              id: 'field_block:node:article:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: above
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
             additional: {  }
             weight: 0
         third_party_settings: {  }

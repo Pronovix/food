@@ -2,13 +2,15 @@ uuid: b11493ed-029b-4616-a795-2a64321f5b9c
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.node.field_description
+    - field.storage.node.field_type_of_food
+    - search_api.server.default_server
+    - core.entity_view_mode.node.search_index
   module:
     - node
     - search_api
-  config:
-    - field.storage.node.field_description
-    - search_api.server.default_server
-    - core.entity_view_mode.node.search_index
+    - taxonomy
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: default_index
@@ -24,13 +26,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_description
-  node_grants:
-    label: 'Node access information'
-    property_path: search_api_node_grants
-    type: string
-    indexed_locked: true
-    type_locked: true
-    hidden: true
+  field_type_of_food:
+    label: 'Type of food'
+    datasource_id: 'entity:node'
+    property_path: field_type_of_food
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_type_of_food
   rendered_item:
     label: 'Rendered item'
     property_path: rendered_item
@@ -43,12 +46,10 @@ field_settings:
           article: search_index
           page: search_index
   status:
-    label: 'Publishing status'
+    label: Published
     datasource_id: 'entity:node'
     property_path: status
     type: boolean
-    indexed_locked: true
-    type_locked: true
     dependencies:
       module:
         - node
@@ -64,8 +65,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: text
-    boost: !!float 8
+    type: string
     dependencies:
       module:
         - node
@@ -78,12 +78,10 @@ field_settings:
       module:
         - node
   uid:
-    label: 'Author ID'
+    label: 'Authored by'
     datasource_id: 'entity:node'
     property_path: uid
     type: integer
-    indexed_locked: true
-    type_locked: true
     dependencies:
       module:
         - node
@@ -96,6 +94,14 @@ datasource_settings:
     languages:
       default: true
       selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: false
+      selected:
+        - type_of_food
+    languages:
+      default: true
+      selected: {  }
 processor_settings:
   add_url:
     weights:
@@ -103,10 +109,6 @@ processor_settings:
   aggregated_field:
     weights:
       add_properties: 20
-  content_access:
-    weights:
-      preprocess_index: -6
-      preprocess_query: -4
   entity_status:
     weights:
       preprocess_index: -10
@@ -152,7 +154,6 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
-      - title
     stopwords:
       - a
       - an
@@ -196,7 +197,6 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
-      - title
     spaces: ''
     overlap_cjk: 1
     minimum_word_size: '3'
@@ -207,7 +207,6 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
-      - title
     weights:
       preprocess_index: -4
       preprocess_query: -7
