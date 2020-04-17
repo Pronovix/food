@@ -1,0 +1,23 @@
+uuid: f99451ef-7ba2-4202-826c-a7ba77b6eae4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_of_food
+  module:
+    - facets
+  theme:
+    - recipe_theme
+id: typeoffood
+theme: recipe_theme
+region: content
+weight: -2
+provider: null
+plugin: 'facet_block:type_of_food'
+settings:
+  id: 'facet_block:type_of_food'
+  label: 'Type of food'
+  provider: facets
+  label_display: visible
+  block_id: typeoffood
+visibility: {  }
