@@ -134,12 +134,11 @@ display:
       display_extenders: {  }
     cache_metadata:
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
       cacheable: false
-      max-age: 0
+      max-age: -1
       tags: {  }
   page_1:
     display_plugin: page
@@ -149,12 +148,15 @@ display:
     display_options:
       display_extenders: {  }
       path: search/content
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
       cacheable: false
-      max-age: 0
+      max-age: -1
       tags: {  }
