@@ -1,0 +1,14 @@
+uuid: e07e525b-9c67-496f-a5c8-014b2931c46b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.product_uploader
+  module:
+    - user
+id: user_add_role_action.product_uploader
+label: 'Add the Product uploader role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: product_uploader
