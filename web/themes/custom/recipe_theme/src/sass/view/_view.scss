@@ -1,12 +1,13 @@
-#edit-actions {
+.view-catalog .views-exposed-form{
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
 }
 
-#edit-search-api-fulltext {
-  width: 50vw;
-  float: left;
+.form-control{
+  min-width: 30vw;
 }
 
-.catalog {
+.block--recipe-theme-content{
   text-align: center;
 }
