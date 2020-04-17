@@ -448,6 +448,11 @@ display:
         title: Catalog
         menu_name: main
         weight: -49
+      cache:
+        type: none
+        options: {  }
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

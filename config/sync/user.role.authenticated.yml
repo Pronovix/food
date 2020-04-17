@@ -19,6 +19,7 @@ permissions:
   - 'delete own article content'
   - 'edit own article content'
   - 'edit own comments'
+  - 'display eu cookie compliance popup'
   - 'post comments'
   - 'search content'
   - 'use text format basic_html'
