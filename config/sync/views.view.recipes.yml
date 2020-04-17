@@ -8,7 +8,7 @@ dependencies:
   module:
     - node
     - user
-id: current_user
+id: recipes
 label: Recipes
 module: views
 description: ''
