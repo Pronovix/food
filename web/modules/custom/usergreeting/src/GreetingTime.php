@@ -72,9 +72,9 @@ final class GreetingTime {
    */
   public function greetingMessage(): array {
     $time_output = (int) date('G', $this->timeOutput->getRequestTime());
-    $config_morning = $this->configFactory->get('usegreeting.settings')->get('morning_start');
-    $config_afternoon = $this->configFactory->get('usegreeting.settings')->get('afernoon_start');
-    $config_evening = $this->configFactory->get('usegreeting.settings')->get('evening_start');
+    $config_morning = $this->configFactory->get('usergreeting.settings')->get('morning_start');
+    $config_afternoon = $this->configFactory->get('usergreeting.settings')->get('afernoon_start');
+    $config_evening = $this->configFactory->get('usergreeting.settings')->get('evening_start');
 
     if ($time_output >= $config_morning && $time_output < $config_afternoon) {
       $greeting = $this->t('Good Morning');

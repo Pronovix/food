@@ -1,5 +1,5 @@
 usergreeting.admin_config_usergreeting:
-  title: 'Usegreeting'
+  title: 'Usergreeting'
   description: 'Manage Usergreeting message intervals'
   route_name: usergreeting.admin_config_usergreeting
   parent: system.admin_config_ui

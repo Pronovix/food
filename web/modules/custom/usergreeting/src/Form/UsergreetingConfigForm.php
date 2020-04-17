@@ -10,29 +10,29 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Class UsergreetingConfigForm.
  */
-class UsergreetingConfigForm extends ConfigFormBase {
+final class UsergreetingConfigForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['usegreeting.settings'];
+    return ['usergreeting.settings'];
   }
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'usegreeting_settings_form';
+    return 'usergreeting_settings_form';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('usegreeting.settings');
+    $config = $this->config('usergreeting.settings');
 
-    $form['usegreeting_settings']['morning_start'] = [
+    $form['usergreeting_settings']['morning_start'] = [
       '#type' => 'number',
       '#min' => 0,
       '#max' => 23,
@@ -41,7 +41,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
       '#required' => TRUE,
     ];
 
-    $form['usegreeting_settings']['afernoon_start'] = [
+    $form['usergreeting_settings']['afernoon_start'] = [
       '#type' => 'number',
       '#min' => 0,
       '#max' => 23,
@@ -50,7 +50,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
       '#required' => TRUE,
     ];
 
-    $form['usegreeting_settings']['evening_start'] = [
+    $form['usergreeting_settings']['evening_start'] = [
       '#type' => 'number',
       '#min' => 0,
       '#max' => 23,
@@ -70,15 +70,15 @@ class UsergreetingConfigForm extends ConfigFormBase {
     $afternoon = $form_state->getValue('afernoon_start');
     $evening = $form_state->getValue('evening_start');
 
-    if ($morning == $afternoon) {
+    if ($morning === $afternoon) {
       $form_state->setErrorByName('morning_start', $this->t('The start point of morning can not be the same like the start point of afternoon'));
     }
 
-    if ($afternoon == $evening) {
+    if ($afternoon === $evening) {
       $form_state->setErrorByName('afernoon_start', $this->t('The start point of afternoon can not be the same like the start point of evening'));
     }
 
-    if ($evening == $morning) {
+    if ($evening === $morning) {
       $form_state->setErrorByName('evening_start', $this->t('The start point of evening can not be the same like the start point of morning'));
     }
 
@@ -95,7 +95,7 @@ class UsergreetingConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->config('usegreeting.settings')
+    $this->config('usergreeting.settings')
       ->set('morning_start', $form_state->getValue('morning_start'))
       ->set('afernoon_start', $form_state->getValue('afernoon_start'))
       ->set('evening_start', $form_state->getValue('evening_start'))
