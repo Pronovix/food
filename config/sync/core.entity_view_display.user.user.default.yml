@@ -9,7 +9,7 @@ dependencies:
     - image.style.thumbnail
     - system.menu.account
     - system.menu.footer
-    - views.view.current_user
+    - views.view.recipe_list
   module:
     - image
     - layout_builder
@@ -111,14 +111,14 @@ third_party_settings:
         layout_settings:
           label: Uploaded
         components:
-          1b933b6c-7aa4-4ddd-8e26-5e551ebdfa64:
-            uuid: 1b933b6c-7aa4-4ddd-8e26-5e551ebdfa64
+          98ad3b74-7465-4e14-9a6c-99a21ecb66ed:
+            uuid: 98ad3b74-7465-4e14-9a6c-99a21ecb66ed
             region: content
             configuration:
-              id: 'views_block:current_user-block_1'
+              id: 'views_block:recipe_list-block_1'
               label: ''
               provider: views
-              label_display: visible
+              label_display: '0'
               views_label: ''
               items_per_page: none
               context_mapping: {  }

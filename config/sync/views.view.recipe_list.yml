@@ -1,4 +1,4 @@
-uuid: 6c869b8d-156a-4f31-8594-c1a789a29b9e
+uuid: 7b411e77-0e90-4ee6-a631-b5b8c83a2dc4
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
   module:
     - node
     - user
-id: recipes
-label: Recipes
+id: recipe_list
+label: 'Recipe List'
 module: views
 description: ''
 tag: ''
