@@ -77,13 +77,13 @@ final class GreetingTime {
     $config_evening = $this->configFactory->get('usergreeting.settings')->get('evening_start');
 
     if ($time_output >= $config_morning && $time_output < $config_afternoon) {
-      $greeting = $this->t('Good Morning');
+      $greeting = implode(' ', [$greeting = $this->t('Good Morning')]);
     }
     elseif ($time_output >= $config_afternoon && $time_output < $config_evening) {
-      $greeting = $this->t('Good Afternoon');
+      $greeting = implode(' ', [$greeting = $this->t('Good Afternoon')]);
     }
     else {
-      $greeting = $this->t('Good Evening');
+      $greeting = implode(' ', [$greeting = $this->t('Good Evening')]);
     }
 
     return [
