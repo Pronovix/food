@@ -1,4 +1,4 @@
 services:
   recommended_recipe.recipe:
-    class: Drupal\recommended_recipe\Controller\RecommendedRecipeController.php
-    arguments: ['@config.factory', '@entity_type.manager']
+    class: Drupal\recommended_recipe\Controller\RecommendedRecipeController
+    arguments: ['@entity_type.manager']

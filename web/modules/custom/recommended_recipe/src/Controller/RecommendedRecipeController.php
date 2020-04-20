@@ -4,16 +4,15 @@ declare(strict_types = 1);
 
 namespace Drupal\recommended_recipe\Controller;
 
-use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Class RecommendedRecipeController.
  */
-class RecommendedRecipeController implements ContainerFactoryPluginInterface {
+class RecommendedRecipeController extends ControllerBase {
 
   /**
    * The entity type manager.
@@ -23,24 +22,21 @@ class RecommendedRecipeController implements ContainerFactoryPluginInterface {
   protected $entityTypeManager;
 
   /**
-   * Constructs a \Drupal\aws_connector\Form\AWSConnectorForm object.
    *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The factory for configuration objects.
+   *
    * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
    *   The entity type manager.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, EntityTypeManager $entity_type_manager) {
-    parent::__construct($config_factory);
+  public function __construct(EntityTypeManager $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static($configuration, $plugin_id, $plugin_definition,
-      $container->get('recommended_recipe.recipe')
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager')
     );
   }
 
