@@ -25,18 +25,18 @@ final class GreetingTime {
   protected $configFactory;
 
   /**
-   * The user account.
-   *
-   * @var \Drupal\Core\Session\AccountInterface
-   */
-  protected $account;
-
-  /**
    * The time output.
    *
    * @var \Drupal\Component\Datetime\TimeInterface
    */
   protected $timeOutput;
+
+  /**
+   * The user account.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
 
   /**
    * The string to translation.
@@ -77,31 +77,33 @@ final class GreetingTime {
     $config_evening = $this->configFactory->get('usergreeting.settings')->get('evening_start');
 
     if ($time_output >= $config_morning && $time_output < $config_afternoon) {
-      $greeting = implode(' ', [$greeting = $this->t('Good Morning')]);
+      $greeting = $this->t('Good Morning');
     }
     elseif ($time_output >= $config_afternoon && $time_output < $config_evening) {
-      $greeting = implode(' ', [$greeting = $this->t('Good Afternoon')]);
+      $greeting = $this->t('Good Afternoon');
     }
     else {
-      $greeting = implode(' ', [$greeting = $this->t('Good Evening')]);
+      $greeting = $this->t('Good Evening');
     }
 
     return [
-      '#type' => 'html_tag',
-      '#tag' => 'p',
-      '#value' => $greeting,
       '#cache' => [
         'contexts' => [
           'timezone',
           'user',
         ],
       ],
-      'username' => [
-        '#theme' => 'username',
-        '#account' => $this->account,
-      ],
-      'exclamiation_mark' => [
-        '#plain_text' => '!',
+      '#type' => 'inline_template',
+      '#template' => '<span class = "greeting_message"><p>{{var}}</p></span>',
+      '#context' => [
+        'var' => [
+          '#prefix' => $greeting,
+          'username' => [
+            '#theme' => 'username',
+            '#account' => $this->account,
+          ],
+          '#suffix' => '!',
+        ],
       ],
     ];
 
