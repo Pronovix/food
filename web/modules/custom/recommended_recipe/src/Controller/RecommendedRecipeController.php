@@ -22,7 +22,7 @@ class RecommendedRecipeController extends ControllerBase {
   protected $entityTypeManager;
 
   /**
-   *
+   * Construct the entityTypeManager.
    *
    * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
    *   The entity type manager.
