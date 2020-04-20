@@ -94,10 +94,8 @@ final class GreetingTime {
         ],
       ],
       '#prefix' => $greeting,
-      'username' => [
-        '#theme' => 'username',
-        '#account' => $this->account,
-      ],
+      '#theme' => 'username',
+      '#account' => $this->account,
       '#suffix' => '!',
     ];
 
