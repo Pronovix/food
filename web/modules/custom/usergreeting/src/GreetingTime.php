@@ -93,18 +93,12 @@ final class GreetingTime {
           'user',
         ],
       ],
-      '#type' => 'inline_template',
-      '#template' => '<span class = "greeting_message"><p>{{var}}</p></span>',
-      '#context' => [
-        'var' => [
-          '#prefix' => $greeting,
-          'username' => [
-            '#theme' => 'username',
-            '#account' => $this->account,
-          ],
-          '#suffix' => '!',
-        ],
+      '#prefix' => $greeting,
+      'username' => [
+        '#theme' => 'username',
+        '#account' => $this->account,
       ],
+      '#suffix' => '!',
     ];
 
   }
