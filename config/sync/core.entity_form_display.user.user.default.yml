@@ -52,10 +52,6 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
-    region: content
-  path:
-    type: path
     weight: 30
     region: content
     settings: {  }
