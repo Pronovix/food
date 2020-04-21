@@ -33,7 +33,7 @@ third_party_settings:
               provider: layout_builder
               label_display: '0'
               formatter:
-                label: above
+                label: hidden
                 type: image
                 settings:
                   image_style: extra_large
@@ -59,7 +59,7 @@ third_party_settings:
               provider: layout_builder
               label_display: '0'
               formatter:
-                label: above
+                label: hidden
                 type: text_default
                 settings: {  }
                 third_party_settings: {  }
