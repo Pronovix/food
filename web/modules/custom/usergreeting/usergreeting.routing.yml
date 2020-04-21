@@ -1,0 +1,7 @@
+usergreeting.admin_config_usergreeting:
+  path: /admin/config/usergreeting
+  defaults:
+    _form: '\Drupal\usergreeting\Form\UsergreetingConfigForm'
+    _title: 'Usergreeting'
+  requirements:
+    _permission: 'Administer usergreeting'

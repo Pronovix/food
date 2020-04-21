@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\usergreeting;
 
 use Drupal\Component\Datetime\TimeInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
@@ -17,11 +18,11 @@ final class GreetingTime {
   use StringTranslationTrait;
 
   /**
-   * The user account.
+   * The value of time.
    *
-   * @var \Drupal\Core\Session\AccountInterface
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  protected $account;
+  protected $configFactory;
 
   /**
    * The time output.
@@ -29,6 +30,13 @@ final class GreetingTime {
    * @var \Drupal\Component\Datetime\TimeInterface
    */
   protected $timeOutput;
+
+  /**
+   * The user account.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
 
   /**
    * The string to translation.
@@ -40,6 +48,8 @@ final class GreetingTime {
   /**
    * GreetingTime constructor.
    *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The value of time.
    * @param \Drupal\Component\Datetime\TimeInterface $timeOutput
    *   The timestamp output.
    * @param \Drupal\Core\Session\AccountInterface $account
@@ -47,7 +57,8 @@ final class GreetingTime {
    * @param \Drupal\Core\StringTranslation\TranslationInterface $stringTranslation
    *   The sentences to be translated.
    */
-  public function __construct(TimeInterface $timeOutput, AccountInterface $account, TranslationInterface $stringTranslation) {
+  public function __construct(ConfigFactoryInterface $config_factory, TimeInterface $timeOutput, AccountInterface $account, TranslationInterface $stringTranslation) {
+    $this->configFactory = $config_factory;
     $this->timeOutput = $timeOutput;
     $this->account = $account;
     $this->stringTranslation = $stringTranslation;
@@ -61,11 +72,14 @@ final class GreetingTime {
    */
   public function greetingMessage(): array {
     $time_output = (int) date('G', $this->timeOutput->getRequestTime());
+    $config_morning = $this->configFactory->get('usergreeting.settings')->get('morning_start');
+    $config_afternoon = $this->configFactory->get('usergreeting.settings')->get('afernoon_start');
+    $config_evening = $this->configFactory->get('usergreeting.settings')->get('evening_start');
 
-    if ($time_output >= 5 && $time_output < 12) {
+    if ($time_output >= $config_morning && $time_output < $config_afternoon) {
       $greeting = $this->t('Good Morning');
     }
-    elseif ($time_output >= 12 && $time_output < 18) {
+    elseif ($time_output >= $config_afternoon && $time_output < $config_evening) {
       $greeting = $this->t('Good Afternoon');
     }
     else {
@@ -73,22 +87,16 @@ final class GreetingTime {
     }
 
     return [
-      '#type' => 'html_tag',
-      '#tag' => 'p',
-      '#value' => $greeting,
       '#cache' => [
         'contexts' => [
           'timezone',
           'user',
         ],
       ],
-      'username' => [
-        '#theme' => 'username',
-        '#account' => $this->account,
-      ],
-      'exclamiation_mark' => [
-        '#plain_text' => '!',
-      ],
+      '#prefix' => $greeting,
+      '#theme' => 'username',
+      '#account' => $this->account,
+      '#suffix' => '!',
     ];
 
   }
