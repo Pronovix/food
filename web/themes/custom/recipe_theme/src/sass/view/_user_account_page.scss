@@ -1,0 +1,42 @@
+.user__name,
+.user__field-first-name {
+  .field__label,
+  .field__item {
+    display: flex;
+    justify-content: center;
+    font-family: Dosis;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #273238;
+  }
+}
+
+.user__user-picture {
+  display: flex;
+  justify-content: center;
+}
+
+.user__field-introduction {
+  .field__label {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    font-family: Dosis;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.875rem;
+    line-height: 3.125rem;
+    color: #273238;
+  }
+  .field__item {
+    text-align: justify;
+    text-indent: 2rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #273238;
+  }
+}
