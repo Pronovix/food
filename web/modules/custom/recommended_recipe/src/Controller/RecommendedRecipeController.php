@@ -6,6 +6,7 @@ namespace Drupal\recommended_recipe\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\usergreeting\GreetingTime;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,6 +15,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  * Class RecommendedRecipeController.
  */
 class RecommendedRecipeController extends ControllerBase {
+  use StringTranslationTrait;
 
   /**
    * The entity type manager.
@@ -30,7 +32,7 @@ class RecommendedRecipeController extends ControllerBase {
   protected $greeting;
 
   /**
-   * Construct the entityTypeManager.
+   * RecommendedRecipeController constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
    *   The entity type manager.
@@ -69,7 +71,6 @@ class RecommendedRecipeController extends ControllerBase {
         'method' => 'GET',
       ]
     );
-
   }
 
   /**
@@ -83,45 +84,38 @@ class RecommendedRecipeController extends ControllerBase {
    * @throws \Drupal\Core\Entity\EntityMalformedException
    */
   private function getResults(): array {
-
-    $ids = \Drupal::entityQuery('node')
-      ->condition('type', 'article')
-      ->condition('status', 1)
+    $query = $this->entityTypeManager->getStorage('node')->getQuery();
+    $ids = $query->condition('type', 'article')
+      ->condition('status', '1')
       ->condition('field_type_of_food.entity.name', $this->getTaxonomy())
       ->execute();
-
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($ids);
     shuffle($nodes);
     $firstItem = reset($nodes);
-
     return [
       'Recipe name' => $firstItem->title->value,
-      'url' => \Drupal::request()->getHost() . $firstItem->toUrl()->toString(),
+      'url' => $firstItem->toUrl()->toString(),
     ];
   }
 
   /**
-   * Get the name of the taxonomy from the usergreeting modul.
+   * Get the name of the taxonomy from the usergreeting module.
    *
    * @return string
    *   The name of the taxonomy.
    */
   public function getTaxonomy(): string {
-
     $greetingtext = $this->greeting->greetingMessage();
-
     $salutation = (string) $greetingtext['#value'];
-
-    if ($salutation == t('Good Morning')) {
+    if ($salutation == $this->t('Good Morning')) {
       $taxonomy = 'Breakfast';
     }
-    elseif ($salutation == t('Good Afternoon')) {
+    elseif ($salutation == $this->t('Good Afternoon')) {
       $taxonomy = 'Lunch';
     }
     else {
       $taxonomy = 'Dinner';
     }
-
     return $taxonomy;
   }
 
