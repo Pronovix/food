@@ -2,9 +2,20 @@
 
 /**
  * @file
- * Contains hook for Product Uploader module.
+ * Contains hook for Ingredient Term module.
  */
 
 declare(strict_types = 1);
 
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function ingredient_term_entity_presave(EntityInterface $entity) {
+	if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'article') {
+    $material = $entity->get('field_ingredients')->value;  
+    $ingredients = explode(" ", $material);
+  }
+}
