@@ -6,6 +6,7 @@ namespace Drupal\recommended_recipe\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\usergreeting\GreetingTime;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -22,13 +23,23 @@ class RecommendedRecipeController extends ControllerBase {
   protected $entityTypeManager;
 
   /**
+   * The greeting message.
+   *
+   * @var \Drupal\usergreeting\GreetingTime
+   */
+  protected $greeting;
+
+  /**
    * Construct the entityTypeManager.
    *
    * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
    *   The entity type manager.
+   * @param \Drupal\usergreeting\GreetingTime $greetingTime
+   *   The greeting message.
    */
-  public function __construct(EntityTypeManager $entity_type_manager) {
+  public function __construct(EntityTypeManager $entity_type_manager, GreetingTime $greetingTime) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->greeting = $greetingTime;
   }
 
   /**
@@ -36,7 +47,8 @@ class RecommendedRecipeController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('usergreeting.greeting')
     );
   }
 
@@ -75,7 +87,7 @@ class RecommendedRecipeController extends ControllerBase {
     $ids = \Drupal::entityQuery('node')
       ->condition('type', 'article')
       ->condition('status', 1)
-      ->condition('field_type_of_food.entity.name', 'Breakfast')
+      ->condition('field_type_of_food.entity.name', $this->getTaxonomy())
       ->execute();
 
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($ids);
@@ -86,6 +98,31 @@ class RecommendedRecipeController extends ControllerBase {
       'Recipe name' => $firstItem->title->value,
       'url' => \Drupal::request()->getHost() . $firstItem->toUrl()->toString(),
     ];
+  }
+
+  /**
+   * Get the name of the taxonomy from the usergreeting modul.
+   *
+   * @return string
+   *   The name of the taxonomy.
+   */
+  public function getTaxonomy(): string {
+
+    $greetingtext = $this->greeting->greetingMessage();
+
+    $salutation = (string) $greetingtext['#value'];
+
+    if ($salutation == t('Good Morning')) {
+      $taxonomy = 'Breakfast';
+    }
+    elseif ($salutation == t('Good Afternoon')) {
+      $taxonomy = 'Lunch';
+    }
+    else {
+      $taxonomy = 'Dinner';
+    }
+
+    return $taxonomy;
   }
 
 }

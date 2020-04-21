@@ -4,4 +4,3 @@ description: Recommend a recipe by the current time of the day
 core_version_requirement: ^8.8
 dependencies:
   - drupal:node
-  -
