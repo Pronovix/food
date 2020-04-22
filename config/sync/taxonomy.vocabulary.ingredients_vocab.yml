@@ -1,0 +1,8 @@
+uuid: 00a6e233-96e1-46a3-ad43-ec1f301a9878
+langcode: en
+status: true
+dependencies: {  }
+name: 'Ingredients Vocab'
+vid: ingredients_vocab
+description: ''
+weight: 0
