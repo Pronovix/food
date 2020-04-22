@@ -1,12 +1,13 @@
-.layout__region {
+.your_recipes {
   h2 {
     display: flex;
     justify-content: center;
-    margin: 2rem auto 1rem auto;
-    font-family: Dosis;
+    margin: 2rem auto 1rem;
+    font-family: 'Dosis', sans-serif;
     font-style: normal;
+    font-weight: 600;
     font-size: 2rem;
     line-height: 1.5rem;
-    color: #273238;
+    color: $gray-800;
   }
 }

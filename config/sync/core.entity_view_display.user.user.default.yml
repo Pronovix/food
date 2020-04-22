@@ -106,10 +106,10 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: Recipes
+          label: Uploaded
         components:
-          f73b6f71-1346-4967-aec4-43f580cf3db4:
-            uuid: f73b6f71-1346-4967-aec4-43f580cf3db4
+          98ad3b74-7465-4e14-9a6c-99a21ecb66ed:
+            uuid: 98ad3b74-7465-4e14-9a6c-99a21ecb66ed
             region: content
             configuration:
               id: 'views_block:recipe_list-block_1'

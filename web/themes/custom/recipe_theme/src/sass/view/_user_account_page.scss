@@ -4,14 +4,30 @@
   .field__item {
     display: flex;
     justify-content: center;
-    font-family: Dosis;
+    font-family: 'Dosis', sans-serif;
     font-style: normal;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #273238;
+    color: $gray-800;
   }
 }
 
+.user__name,
+.user__field-first-name {
+  .field__label {
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+}
+
+.user__name,
+.user__field-first-name {
+  .field__item {
+    background-color: $gray-200;
+    padding: 1rem auto;
+    border-radius: 0.4rem;
+  }
+}
 .user__user-picture {
   display: flex;
   justify-content: center;
@@ -22,21 +38,21 @@
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
-    font-family: Dosis;
+    font-family: 'Dosis', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 1.875rem;
     line-height: 3.125rem;
-    color: #273238;
+    color: $gray-800;
   }
   .field__item {
     text-align: justify;
     text-indent: 2rem;
-    font-family: Open Sans;
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #273238;
+    color: $gray-800;
   }
 }
