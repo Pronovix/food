@@ -279,6 +279,19 @@ display:
     display_options:
       path: node
       display_extenders: {  }
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+      defaults:
+        style: false
+        row: false
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
     display_plugin: page
     display_title: Page
     id: page_1
