@@ -8,6 +8,7 @@
 declare(strict_types = 1);
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_entity_presave().
@@ -16,11 +17,14 @@ function ingredient_term_entity_presave(EntityInterface $entity): void {
   if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'article') {
     $material = $entity->get('field_ingredients')->value;
     $ingredients = explode(' ', $material);
-    foreach ($ingredients as $ingredient) {
-      $term->create([
-        'name' => $ingredient,
-        'vid' => 'ingredient_vocab',
-      ])->save();
-    }
+    echo $ingredients;
+  }
+  foreach ($ingredients as $ingredient) {
+    $term = [
+      'name' => $ingredient,
+      'vid' => 'ingredients_vocab',
+    ];
+    $term = Term::create($term);
+    $term->save();
   }
 }
