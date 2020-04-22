@@ -79,10 +79,10 @@ third_party_settings:
             region: content
             configuration:
               id: 'views_block:recipe_list-block_2'
-              label: ''
+              label: 'Recent Recipes'
               provider: views
               label_display: visible
-              views_label: ''
+              views_label: 'Recent Recipes'
               items_per_page: none
               context_mapping: {  }
             additional: {  }
