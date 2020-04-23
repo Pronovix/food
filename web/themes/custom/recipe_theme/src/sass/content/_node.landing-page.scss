@@ -9,3 +9,10 @@
   margin-left: 6rem;
   margin-right: 6rem;
 }
+
+@media (max-width: 599px) {
+  .landing-page__body {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
