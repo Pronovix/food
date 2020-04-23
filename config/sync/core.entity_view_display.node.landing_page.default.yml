@@ -74,15 +74,15 @@ third_party_settings:
         layout_settings:
           label: Recent
         components:
-          b3d7ddb8-2d7b-43ed-9c8f-a991d5160282:
-            uuid: b3d7ddb8-2d7b-43ed-9c8f-a991d5160282
+          87dfe798-be98-4647-8c43-3ddf53699ac1:
+            uuid: 87dfe798-be98-4647-8c43-3ddf53699ac1
             region: content
             configuration:
-              id: 'views_block:recipe_list-block_2'
-              label: 'Recent Recipes'
+              id: 'views_block:recipe_list-recent_recipes'
+              label: ''
               provider: views
               label_display: visible
-              views_label: 'Recent Recipes'
+              views_label: ''
               items_per_page: none
               context_mapping: {  }
             additional: {  }
