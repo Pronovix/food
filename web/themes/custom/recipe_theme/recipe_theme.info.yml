@@ -10,7 +10,7 @@ logo: logo.png
 
 regions:
   navbar_branding: Navbar branding
-  navbar_left:  Navbar left
+  navbar_left: Navbar left
   navbar_right: Navbar right
   header: Header
   content: Content
@@ -20,7 +20,7 @@ regions:
 libraries:
   - radix/style
   - recipe_theme/style
-  - 'recipe_theme/fonts'
+  - recipe_theme/fonts
 
 libraries-override:
   radix/bootstrap: false

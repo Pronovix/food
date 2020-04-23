@@ -11,4 +11,4 @@ style:
 
 fonts:
   css:
-    theme: 'fonts/dosis/static'
+    theme: 'fonts/dosis'
