@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Dosis', sans-serif;
+    font-weight: 300;
     font-style: normal;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -40,7 +41,7 @@
     margin-top: 1.5rem;
     font-family: 'Dosis', sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal !important;
     font-size: 1.875rem;
     line-height: 3.125rem;
     color: $gray-800;
