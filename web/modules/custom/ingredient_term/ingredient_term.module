@@ -18,12 +18,18 @@ function ingredient_term_entity_presave(EntityInterface $entity): void {
     $material = $entity->get('field_ingredients')->value;
     $ingredients = explode(' ', $material);
     foreach ($ingredients as $ingredient) {
-      $term = [
-        'name' => $ingredient,
-        'vid' => 'ingredients_vocab',
-      ];
-      $term = Term::create($term);
-      $term->save();
+      $terms = taxonomy_term_load_multiple_by_name($ingredient, 'ingredients_vocab');
+      if ($terms) {
+        $term = reset($terms);
+      }
+      else {
+        $term = Term::create([
+          'name' => $ingredient,
+          'vid' => 'ingredients_vocab',
+        ]);
+        $term->save();
+      }
+      return $term->id();
     }
   }
 }
