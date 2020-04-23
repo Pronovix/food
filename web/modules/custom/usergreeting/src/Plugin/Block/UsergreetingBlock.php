@@ -68,7 +68,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build(): array {
     $greetuser = $this->greeting->greetingMessage();
 
     if ($this->account->isAnonymous() === TRUE) {

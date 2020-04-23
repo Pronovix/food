@@ -32,13 +32,6 @@ final class GreetingTime {
   protected $timeOutput;
 
   /**
-   * The string to translation.
-   *
-   * @var \Drupal\Core\StringTranslation\TranslationInterface
-   */
-  protected $stringTranslation;
-
-  /**
    * GreetingTime constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -57,13 +50,13 @@ final class GreetingTime {
   /**
    * Returns the greeting.
    *
-   * @return string
+   * @return object
    *   The greeting message output.
    */
   public function greetingMessage(): TranslatableMarkup {
     $time_output = (int) date('G', $this->timeOutput->getRequestTime());
     $config_morning = $this->configFactory->get('usergreeting.settings')->get('morning_start');
-    $config_afternoon = $this->configFactory->get('usergreeting.settings')->get('afernoon_start');
+    $config_afternoon = $this->configFactory->get('usergreeting.settings')->get('afternoon_start');
     $config_evening = $this->configFactory->get('usergreeting.settings')->get('evening_start');
 
     if ($time_output >= $config_morning && $time_output < $config_afternoon) {
