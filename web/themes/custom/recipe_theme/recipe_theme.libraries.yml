@@ -11,5 +11,4 @@ style:
 
 fonts:
   css:
-    theme:
-      '//fonts.googleapis.com/css2?family=Dosis&display=swap': { external: true }
+    theme: 'fonts/dosis/static'
