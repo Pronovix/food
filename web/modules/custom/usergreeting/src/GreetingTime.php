@@ -50,7 +50,7 @@ final class GreetingTime {
   /**
    * Returns the greeting.
    *
-   * @return TranslatableMarkup
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
    *   The greeting message output.
    */
   public function greetingMessage(): TranslatableMarkup {
