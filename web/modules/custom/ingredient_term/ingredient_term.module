@@ -16,20 +16,21 @@ use Drupal\taxonomy\Entity\Term;
 function ingredient_term_entity_presave(EntityInterface $entity): void {
   if ($entity->getEntityTypeId() === 'node' && $entity->getType() === 'article') {
     $material = $entity->get('field_ingredients')->value;
-    $ingredients = explode(' ', $material);
-    foreach ($ingredients as $ingredient) {
-      $terms = taxonomy_term_load_multiple_by_name($ingredient, 'ingredients_vocab');
+    $lines = explode(PHP_EOL, (string) $material);
+    foreach ($lines as $line) {
+      $ingredients = explode(' ', $line);
+      $element = end($ingredients);
+      $terms = taxonomy_term_load_multiple_by_name($element, 'ingredients_vocab');
       if ($terms) {
         $term = reset($terms);
       }
       else {
         $term = Term::create([
-          'name' => $ingredient,
+          'name' => $element,
           'vid' => 'ingredients_vocab',
         ]);
         $term->save();
       }
-      return $term->id();
     }
   }
 }
