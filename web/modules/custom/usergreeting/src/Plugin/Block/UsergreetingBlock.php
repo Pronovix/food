@@ -6,6 +6,7 @@ namespace Drupal\usergreeting\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\usergreeting\GreetingTime;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -28,6 +29,13 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
   protected $greeting;
 
   /**
+   * The user account.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
+
+  /**
    * Construct a UsergreetingBlock object.
    *
    * @param array $configuration
@@ -38,10 +46,13 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    *   The plugin implementation definition.
    * @param \Drupal\usergreeting\GreetingTime $greeting
    *   The greeting message.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The user account.
    */
-  public function __construct(array $configuration, string $plugin_id, $plugin_definition, GreetingTime $greeting) {
+  public function __construct(array $configuration, string $plugin_id, $plugin_definition, GreetingTime $greeting, AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->greeting = $greeting;
+    $this->account = $account;
   }
 
   /**
@@ -49,22 +60,30 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
-      $container->get('usergreeting.greeting')
+      $container->get('usergreeting.greeting'),
+      $container->get('current_user')
     );
   }
 
   /**
    * {@inheritdoc}
    */
-  public function build() {
-    $build = [];
+  public function build(): array {
     $greetuser = $this->greeting->greetingMessage();
+    $message = [
+      '#cache' => [
+        'max-age' => 0,
+      ],
+      '#prefix' => $greetuser,
+      '#suffix' => '!',
+    ];
 
-    $build['greetuser'] = $greetuser;
+    if ($this->account->isAuthenticated() === TRUE) {
+      $message['#theme'] = 'username';
+      $message['#account'] = $this->account;
+    }
 
-    $build['#cache']['max-age'] = 0;
-    return $build;
-
+    return $message;
   }
 
 }
