@@ -70,27 +70,19 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public function build(): array {
     $greetuser = $this->greeting->greetingMessage();
+    $message = [
+      '#cache' => [
+        'max-age' => 0,
+      ],
+      '#prefix' => $greetuser,
+      '#suffix' => '!',
+    ];
 
-    if ($this->account->isAnonymous() === TRUE) {
-      $message = [
-        '#cache' => [
-          'max-age' => 0,
-        ],
-        '#prefix' => $greetuser,
-        '#suffix' => '!',
-      ];
+    if ($this->account->isAuthenticated() === TRUE) {
+      $message['#theme'] = 'username';
+      $message['#account'] = $this->account;
     }
-    else {
-      $message = [
-        '#cache' => [
-          'max-age' => 0,
-        ],
-        '#prefix' => $greetuser,
-        '#theme' => 'username',
-        '#account' => $this->account,
-        '#suffix' => '!',
-      ];
-    }
+
     return $message;
   }
 
