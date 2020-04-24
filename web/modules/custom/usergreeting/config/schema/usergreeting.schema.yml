@@ -7,7 +7,7 @@ usergreeting.settings:
     morning_start:
       type: integer
       label: 'Time value for start point of morning greeting'
-    afernoon_start:
+    afternoon_start:
       type: integer
       label: 'Time value for start point of afternoon greeting'
     evening_start:
