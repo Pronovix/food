@@ -114,7 +114,7 @@ class RecommendedRecipeController extends ControllerBase {
    */
   public function getTaxonomyName(): string {
     $greetingtext = $this->greeting->greetingMessage();
-    $salutation = (string) $greetingtext['#value'];
+    $salutation = (string) $greetingtext;
     if ($salutation === $this->t('Good Morning')) {
       $taxonomy = 'Breakfast';
     }
