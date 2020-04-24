@@ -41,12 +41,12 @@ final class UsergreetingConfigForm extends ConfigFormBase {
       '#required' => TRUE,
     ];
 
-    $form['usergreeting_settings']['afernoon_start'] = [
+    $form['usergreeting_settings']['afternoon_start'] = [
       '#type' => 'number',
       '#min' => 0,
       '#max' => 23,
       '#title' => $this->t('Set the start point of greeting "Good Afternoon", it will also be the end point of greeting "Good Morning"'),
-      '#default_value' => $config->get('afernoon_start'),
+      '#default_value' => $config->get('afternoon_start'),
       '#required' => TRUE,
     ];
 
@@ -67,7 +67,7 @@ final class UsergreetingConfigForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $morning = $form_state->getValue('morning_start');
-    $afternoon = $form_state->getValue('afernoon_start');
+    $afternoon = $form_state->getValue('afternoon_start');
     $evening = $form_state->getValue('evening_start');
 
     if ($morning === $afternoon) {
@@ -75,7 +75,7 @@ final class UsergreetingConfigForm extends ConfigFormBase {
     }
 
     if ($afternoon === $evening) {
-      $form_state->setErrorByName('afernoon_start', $this->t('The start point of afternoon can not be the same like the start point of evening'));
+      $form_state->setErrorByName('afternoon_start', $this->t('The start point of afternoon can not be the same like the start point of evening'));
     }
 
     if ($evening === $morning) {
@@ -87,7 +87,7 @@ final class UsergreetingConfigForm extends ConfigFormBase {
     }
 
     if ($afternoon > $evening) {
-      $form_state->setErrorByName('afernoon_start', $this->t('The value of afternoon has to be less than the value of evening'));
+      $form_state->setErrorByName('afternoon_start', $this->t('The value of afternoon has to be less than the value of evening'));
     }
   }
 
@@ -97,7 +97,7 @@ final class UsergreetingConfigForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('usergreeting.settings')
       ->set('morning_start', $form_state->getValue('morning_start'))
-      ->set('afernoon_start', $form_state->getValue('afernoon_start'))
+      ->set('afternoon_start', $form_state->getValue('afternoon_start'))
       ->set('evening_start', $form_state->getValue('evening_start'))
       ->save();
 
