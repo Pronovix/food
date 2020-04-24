@@ -10,7 +10,7 @@
 #}
 {% set classes = [
   'block',
-	'your_recipes',
+	'user__recipes--title',
   bundle ? 'block--' ~ bundle|clean_class,
   id ? 'block--' ~ id|replace({"_": "-"})|clean_class,
 ]|merge(utility_classes ? utility_classes : []) %}
