@@ -4,10 +4,8 @@
   opacity: 0.5;
 }
 
-.landing-page__body {
+.landing-page__body { 
   text-align: center;
-  margin-left: 6rem;
-  margin-right: 6rem;
 }
 
 @media (max-width: 599px) {
@@ -15,4 +13,22 @@
     margin-left: 2rem;
     margin-right: 2rem;
   }
+}
+
+@media (min-width: 600px) {
+  .landing-page__body {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .landing-page__body {
+    margin-left: 9rem;
+    margin-right: 9rem;
+  }
+}
+
+.landing-page img {
+  border: 1px solid black;
 }
