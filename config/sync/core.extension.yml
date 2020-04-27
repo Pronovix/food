@@ -30,6 +30,7 @@ module:
   help: 0
   history: 0
   image: 0
+  ingredient_term: 0
   ingredient_validation: 0
   layout_builder: 0
   layout_discovery: 0
