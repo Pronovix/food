@@ -313,7 +313,9 @@ display:
       defaults:
         arguments: false
         relationships: false
+        title: false
       relationships: {  }
+      title: 'Recent Recipes'
     cache_metadata:
       max-age: -1
       contexts:
