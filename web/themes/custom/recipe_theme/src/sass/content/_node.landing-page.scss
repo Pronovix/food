@@ -6,26 +6,25 @@
 
 .landing-page__body {
   text-align: center;
-}
-
-@media (max-width: 599px) {
-  .landing-page__body {
+  @include for-phone-only {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-}
-
-@media (min-width: 600px) {
-  .landing-page__body {
+  @include for-tablet-portrait-up {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  @include for-tablet-landscape-up {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  @include for-desktop-up {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  @include for-big-desktop-up {
     margin-left: 6rem;
     margin-right: 6rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  .landing-page__body {
-    margin-left: 9rem;
-    margin-right: 9rem;
   }
 }
 

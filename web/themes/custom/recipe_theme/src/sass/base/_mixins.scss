@@ -1,0 +1,15 @@
+@mixin for-phone-only { 
+  @media (max-width: map-get($grid-breakpoints, 'sm')-1) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: map-get($grid-breakpoints, 'sm')) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: map-get($grid-breakpoints, 'md')) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: map-get($grid-breakpoints, 'lg')) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: map-get($grid-breakpoints, 'xl')) { @content; }
+}
