@@ -1,22 +1,45 @@
 // Headings
 // -----------------------------------------------------------------------------
-h1,
+
+h4,
+h6 {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 h2,
 h3,
-h4,
-h5,
-h6 {
+h5 {
+  font-family: Dosis;
+  font-style: normal;
+  text-align: center;
+  font-weight: bold;
 }
 
 // Text
 // -----------------------------------------------------------------------------
 p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
 }
 
 // Links
 // -----------------------------------------------------------------------------
 a {
+	color: $orange;
   @include hover {
+  	color: $orange;
+  	text-decoration-line: underline;
   }
 }
 
@@ -25,6 +48,7 @@ a {
 ol,
 ul,
 dl {
+	color: $gray-600;
 }
 
 // Image
@@ -41,6 +65,10 @@ figcaption {
 // Other
 // -----------------------------------------------------------------------------
 blockquote {
+	font-family: Open Sans;
+  font-style: italic;
+  font-weight: normal;
+  color: $gray-600;
 }
 
 strong {
