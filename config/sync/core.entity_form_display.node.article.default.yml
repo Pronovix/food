@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_description
     - field.field.node.article.field_image
+    - field.field.node.article.field_ingredient_terms
     - field.field.node.article.field_ingredients
     - field.field.node.article.field_tags
     - field.field.node.article.field_type_of_food
@@ -124,4 +125,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_ingredient_terms: true
   layout_builder__layout: true
