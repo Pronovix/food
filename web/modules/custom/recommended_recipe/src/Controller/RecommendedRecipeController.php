@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace Drupal\recommended_recipe\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\usergreeting\GreetingTime;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -13,15 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 /**
  * Class RecommendedRecipeController.
  */
-class RecommendedRecipeController extends ControllerBase {
-
-
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManager
-   */
-  protected $entityTypeManager;
+final class RecommendedRecipeController extends ControllerBase {
 
   /**
    * The greeting message.
@@ -38,8 +29,7 @@ class RecommendedRecipeController extends ControllerBase {
    * @param \Drupal\usergreeting\GreetingTime $greetingTime
    *   The greeting message.
    */
-  public function __construct(EntityTypeManager $entity_type_manager, GreetingTime $greetingTime) {
-    $this->entityTypeManager = $entity_type_manager;
+  public function __construct(GreetingTime $greetingTime) {
     $this->greeting = $greetingTime;
   }
 
@@ -48,7 +38,6 @@ class RecommendedRecipeController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity_type.manager'),
       $container->get('usergreeting.greeting')
     );
   }
@@ -83,7 +72,7 @@ class RecommendedRecipeController extends ControllerBase {
    * @throws \Drupal\Core\Entity\EntityMalformedException
    */
   private function getResults(): array {
-    $query = $this->entityTypeManager->getStorage('node')->getQuery();
+    $query = $this->entityTypeManager()->getStorage('node')->getQuery();
 
     $ids = $query->condition('type', 'article')
       ->condition('status', '1')
@@ -95,15 +84,13 @@ class RecommendedRecipeController extends ControllerBase {
         'Recipe name' => 'There is no available recipe',
       ];
     }
-    else {
-      $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($ids);
-      shuffle($nodes);
-      $firstItem = reset($nodes);
-      return [
-        'Recipe name' => $firstItem->title->value,
-        'url' => $firstItem->toUrl()->toString(),
-      ];
-    }
+    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($ids);
+    shuffle($nodes);
+    $firstItem = reset($nodes);
+    return [
+      'Recipe name' => $firstItem->title->value,
+      'url' => $firstItem->toUrl()->toString(),
+    ];
   }
 
   /**
@@ -113,12 +100,11 @@ class RecommendedRecipeController extends ControllerBase {
    *   The name of the taxonomy.
    */
   public function getTaxonomyName(): string {
-    $greetingtext = $this->greeting->greetingMessage();
-    $salutation = (string) $greetingtext;
-    if ($salutation === (string) $this->t('Good Morning')) {
+    $greetingtext = render($this->greeting->greetingMessage());
+    if ($greetingtext === 'Good Morning') {
       $taxonomy = 'Breakfast';
     }
-    elseif ($salutation === (string) $this->t('Good Afternoon')) {
+    elseif ($greetingtext === 'Good Afternoon') {
       $taxonomy = 'Lunch';
     }
     else {
