@@ -55,7 +55,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: 'a.btn.btn-primary|Primary button'
+      styles: "a.btn.btn-primary|Primary button\r\na.btn.btn-secondary|Secondary button\r\na.btn.btn-success|Success button\r\na.btn.btn-danger|Danger button\r\na.btn.btn-warning|Warning button\r\na.btn.btn-info|Info button\r\na.btn.btn-light|Light button\r\na.btn.btn-dark|Dark button\r\na.btn.btn-link|Link button\r\nspan.text-primary|Primary text\r\nspan.text-secondary|Secondary text\r\nspan.text-success|Success text\r\nspan.text-danger|Danger text\r\nspan.text-warning|Warning text\r\nspan.text-info|Info text\r\nspan.text-light|Light text\r\nspan.text-dark|Dark text"
 image_upload:
   status: true
   scheme: public
