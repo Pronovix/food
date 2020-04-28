@@ -1,0 +1,15 @@
+.hero-block__body {
+  padding: 2rem;
+  @include for-tablet-portrait-up {
+    padding: 3rem;
+  }
+  @include for-tablet-landscape-up {
+    padding: 4rem;
+  }
+  @include for-desktop-up {
+    padding: 5rem;
+  }
+  @include for-big-desktop-up {
+    padding: 6rem;
+  }
+}

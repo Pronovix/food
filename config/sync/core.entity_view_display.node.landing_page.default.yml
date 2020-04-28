@@ -7,7 +7,10 @@ dependencies:
     - field.field.node.landing_page.field_image_hero
     - node.type.landing_page
     - views.view.recipe_list
+  content:
+    - 'block_content:hero_block:0f912b12-bcb3-496e-b635-cb805804f799'
   module:
+    - block_content
     - image
     - layout_builder
     - layout_discovery
@@ -16,34 +19,28 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
+    allow_custom: true
     enabled: true
     sections:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: Hero
+          label: 'Hero section'
         components:
-          cba495dd-fd7f-4654-82a6-664cb488884d:
-            uuid: cba495dd-fd7f-4654-82a6-664cb488884d
+          cc616131-63d6-4261-a7f7-49c231bde428:
+            uuid: cc616131-63d6-4261-a7f7-49c231bde428
             region: content
             configuration:
-              id: 'field_block:node:landing_page:field_image_hero'
-              label: 'Image hero'
-              provider: layout_builder
+              id: 'block_content:0f912b12-bcb3-496e-b635-cb805804f799'
+              label: 'Hero block'
+              provider: block_content
               label_display: '0'
-              formatter:
-                label: hidden
-                type: image
-                settings:
-                  image_style: extra_large
-                  image_link: ''
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
             additional: {  }
-            weight: 1
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -87,13 +84,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: layout_threecol_section
-        layout_settings:
-          label: Categories
-          column_widths: 33-34-33
-        components: {  }
         third_party_settings: {  }
 id: node.landing_page.default
 targetEntityType: node
