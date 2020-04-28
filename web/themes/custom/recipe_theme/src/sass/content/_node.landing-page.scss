@@ -1,13 +1,9 @@
-.landing-page__field-image-hero {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  opacity: 0.5;
-}
-
 .landing-page__body {
   text-align: center;
+  margin-top: 2.5rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-bottom: 2.5rem;
   @include for-tablet-portrait-up {
     margin-left: 3rem;
     margin-right: 3rem;
