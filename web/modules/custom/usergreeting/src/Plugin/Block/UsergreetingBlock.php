@@ -79,7 +79,7 @@ class UsergreetingBlock extends BlockBase implements ContainerFactoryPluginInter
     ];
 
     if ($this->account->isAuthenticated() === TRUE) {
-      $message['#prefix'] = $message['#prefix'] . ' ';
+      $message['#prefix'] .= ' ';
       $message['#theme'] = 'username';
       $message['#account'] = $this->account;
     }
