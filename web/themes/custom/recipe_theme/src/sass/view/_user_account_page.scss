@@ -1,9 +1,16 @@
 .user__name,
+.user__field-first-name,
+.user__field-introduction {
+  .field__label {
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+  }
+}
+
+.user__name,
 .user__field-first-name {
   .field__label,
   .field__item {
-    text-align: center;
-    font-family: 'Dosis', sans-serif;
     font-style: normal;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -17,18 +24,12 @@
     padding: 1rem auto;
     border-radius: 0.4rem;
     font-weight: 300;
+    text-align: center;
   }
-}
-
-.user__user-picture {
-  display: flex;
-  justify-content: center;
 }
 
 .user__field-introduction {
   .field__label {
-    text-align: center;
-    font-family: 'Dosis', sans-serif;
     margin-top: 1.5rem;
     font-size: 1.875rem;
     line-height: 3.125rem;
@@ -38,6 +39,11 @@
     text-indent: 2rem;
     font-family: 'Open Sans';
   }
+}
+
+.user__user-picture {
+  display: flex;
+  justify-content: center;
 }
 
 .mccoppin {

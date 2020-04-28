@@ -16,19 +16,19 @@
  */
 #}
 {% if title %}
-	<h3>{{ title }}</h3>
+  <h3>{{ title }}</h3>
 {% endif %}
 <div class="row">
-	{% for row in rows %}
-		<div class="col-sm-12 col-md-4 card">
-			<div class="recipe">
-				{% set row_classes = [
-					default_row_class ? 'views-row',
-				] %}
-				<div{{ row.attributes.addClass(row_classes) }}>
-					{{- row.content -}}
-				</div>
-			</div>
-		</div>
-	{% endfor %}
+  {% for row in rows %}
+    <div class="col-sm-12 col-md-4 card">
+      <div class="recipe">
+        {% set row_classes = [
+          default_row_class ? 'views-row',
+        ] %}
+        <div{{ row.attributes.addClass(row_classes) }}>
+          {{- row.content -}}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 </div>
