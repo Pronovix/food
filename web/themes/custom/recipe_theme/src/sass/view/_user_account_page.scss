@@ -50,3 +50,9 @@
   padding: 3rem;
   border-radius: 2rem;
 }
+
+.page--user {
+  .block--recipe-theme-page-title {
+    display: none;
+  }
+}
