@@ -6,10 +6,8 @@
 
 .landing-page__body {
   text-align: center;
-  @include for-phone-only {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
+  margin-left: 2rem;
+  margin-right: 2rem;
   @include for-tablet-portrait-up {
     margin-left: 3rem;
     margin-right: 3rem;
@@ -28,6 +26,8 @@
   }
 }
 
-.landing-page img {
-  border: 1px solid black;
+.landing-page {
+  img {
+    border: 1px solid black;
+  }
 }
