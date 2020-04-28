@@ -24,8 +24,6 @@ final class RecommendedRecipeController extends ControllerBase {
   /**
    * RecommendedRecipeController constructor.
    *
-   * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
-   *   The entity type manager.
    * @param \Drupal\usergreeting\GreetingTime $greetingTime
    *   The greeting message.
    */
@@ -85,6 +83,11 @@ final class RecommendedRecipeController extends ControllerBase {
       ];
     }
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($ids);
+    if (empty($nodes)) {
+      return [
+        'Recipe name' => 'There is no available recipe',
+      ];
+    }
     shuffle($nodes);
     $firstItem = reset($nodes);
     return [
