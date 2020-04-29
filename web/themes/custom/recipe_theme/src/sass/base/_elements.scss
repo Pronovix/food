@@ -1,35 +1,32 @@
-// Headings
+
+// Headings, Text
 // -----------------------------------------------------------------------------
-
+h1,
+h2,
+h3,
 h4,
-h6 {
-  font-family: Dosis;
-  font-style: normal;
-  font-weight: normal;
+h5,
+h6,
+p {
+	font-family: $font-family-base;
+	font-style: normal;
 }
 
-h1 {
-  font-family: Dosis;
-  font-style: normal;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-}
-
+h1,
 h2,
 h3,
 h5 {
-  font-family: Dosis;
-  font-style: normal;
-  text-align: center;
+	text-align: center;
   font-weight: bold;
 }
 
-// Text
-// -----------------------------------------------------------------------------
+h1 {
+  text-transform: uppercase;
+}
+
+h4,
+h6,
 p {
-  font-family: Open Sans;
-  font-style: normal;
   font-weight: normal;
 }
 
@@ -37,10 +34,35 @@ p {
 // -----------------------------------------------------------------------------
 a {
 	color: $orange;
+	font-family: $font-family-monospace;
+	font-weight: 600;
   @include hover {
   	color: $orange;
   	text-decoration-line: underline;
   }
+}
+
+a.navbar-brand {
+	text-transform: uppercase;
+	font-size: 2rem;
+}
+
+a.nav-link {
+  text-transform: uppercase;
+  color: $gray-700;
+  display: inline;
+}
+
+a.nav-link:hover {
+	color: $white;
+	background-color: $gray-700;
+}
+
+a.nav-link.is-active {
+	color: $gray-700;
+	background-color: $gray-100;
+	border-style: solid;
+	border-color: $red;
 }
 
 // Lists
@@ -49,6 +71,7 @@ ol,
 ul,
 dl {
 	color: $gray-600;
+	font-family: $font-family-monospace;
 }
 
 // Image
@@ -65,14 +88,25 @@ figcaption {
 // Other
 // -----------------------------------------------------------------------------
 blockquote {
-	font-family: Open Sans;
+	font-family: $font-family-monospace;
   font-style: italic;
   font-weight: normal;
   color: $gray-600;
 }
 
-strong {
+.btn-primary {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: $font-family-base;
+	color: $gray-700;
+	background-color: $white;
+	min-width: 85px;
+	border: 2px solid $gray-700;
 }
 
 small {
+	font-family: $font-family-monospace;
+  font-style: normal;
+  font-weight: 600;
+  color: $gray-400;
 }
