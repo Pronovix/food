@@ -11,7 +11,7 @@ dependencies:
 id: typeoffood
 theme: recipe_theme
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: 'facet_block:type_of_food'
 settings:
