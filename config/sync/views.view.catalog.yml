@@ -441,7 +441,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: ''
+      title: Catalog
       header: {  }
       footer: {  }
       empty:
