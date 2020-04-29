@@ -54,6 +54,16 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_ingredient_terms:
+    type: entity_reference_autocomplete
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_ingredients:
     weight: 4
     settings:
@@ -125,5 +135,4 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
-  field_ingredient_terms: true
   layout_builder__layout: true

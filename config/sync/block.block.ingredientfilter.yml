@@ -1,0 +1,23 @@
+uuid: 532ae500-01b1-477d-812a-9526d340fd7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.ingredient_filter
+  module:
+    - facets
+  theme:
+    - recipe_theme
+id: ingredientfilter
+theme: recipe_theme
+region: content
+weight: 0
+provider: null
+plugin: 'facet_block:ingredient_filter'
+settings:
+  id: 'facet_block:ingredient_filter'
+  label: 'Ingredient filter'
+  provider: facets
+  label_display: visible
+  block_id: ingredientfilter
+visibility: {  }
