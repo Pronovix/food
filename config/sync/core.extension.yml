@@ -48,6 +48,7 @@ module:
   radix_layouts: 0
   rdf: 0
   responsive_image: 0
+  recommended_recipe: 0
   search_api: 0
   search_api_db: 0
   search_api_db_defaults: 0
