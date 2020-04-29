@@ -1,0 +1,7 @@
+recommended_recipe.content:
+  path: '/api/recipe/recommended'
+  defaults:
+    _controller: '\Drupal\recommended_recipe\Controller\RecommendedRecipeController::content'
+    _title: 'Recommended Recipe'
+  requirements:
+    _permission: 'access content'
