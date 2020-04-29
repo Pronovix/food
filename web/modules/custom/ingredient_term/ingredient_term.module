@@ -20,18 +20,27 @@ function ingredient_term_entity_presave(EntityInterface $entity): void {
     foreach ($lines as $line) {
       $trimmed_line = trim($line);
       $ingredients = explode(' ', $trimmed_line);
-      $element = end($ingredients);
-      $terms = taxonomy_term_load_multiple_by_name($element, 'ingredients_vocab');
+      $elements = end($ingredients);
+      $terms = taxonomy_term_load_multiple_by_name($elements, 'ingredients_vocab');
       if ($terms) {
         $term = reset($terms);
       }
       else {
         $term = Term::create([
-          'name' => $element,
+          'name' => $elements,
           'vid' => 'ingredients_vocab',
         ]);
         $term->save();
       }
+    }
+    foreach ($elements as $element) {
+      $recipe_term = Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
+        'name' => $element,
+        'vid' => 'ingredients_vocab',
+      ]);
+      $recipe_term = reset($recipe_term);
+      $recipe_term_id = $recipe_term->id();
+      $entity->field_ingredient_terms[] = $recipe_term_id;
     }
   }
 }
