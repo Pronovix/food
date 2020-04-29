@@ -83,11 +83,6 @@ final class RecommendedRecipeController extends ControllerBase {
       ];
     }
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($ids);
-    if (empty($nodes)) {
-      return [
-        'Recipe name' => 'There is no available recipe',
-      ];
-    }
     shuffle($nodes);
     $firstItem = reset($nodes);
     return [
@@ -103,7 +98,7 @@ final class RecommendedRecipeController extends ControllerBase {
    *   The name of the taxonomy.
    */
   public function getTaxonomyName(): string {
-    $greetingtext = render($this->greeting->greetingMessage());
+    $greetingtext = $this->greeting->greetingMessage()->render();
     if ($greetingtext === 'Good Morning') {
       $taxonomy = 'Breakfast';
     }
