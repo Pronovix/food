@@ -7,14 +7,14 @@
 
 declare(strict_types = 1);
 
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 
 /**
- * Implements hook_entity_presave().
+ * Implements hook_entity_type_presave().
  */
-function ingredient_term_article_presave(EntityInterface $entity): void {
-  $material = $entity->get('field_ingredients')->value;
+function ingredient_term_node_presave(NodeInterface $node): void {
+  $material = $node->get('field_ingredients')->value;
   $lines = explode(PHP_EOL, (string) $material);
   foreach ($lines as $line) {
     $trimmed_line = trim($line);
@@ -32,6 +32,6 @@ function ingredient_term_article_presave(EntityInterface $entity): void {
       $term->save();
     }
     $recipe_term_id = $term->id();
-    $entity->field_ingredient_terms[]->set($recipe_term_id);
+    $node->field_ingredient_terms->set($recipe_term_id);
   }
 }
