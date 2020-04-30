@@ -11,8 +11,8 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: recipe_theme_branding
 theme: recipe_theme
-region: header
-weight: 0
+region: navbar_branding
+weight: -7
 provider: null
 plugin: system_branding_block
 settings:

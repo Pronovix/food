@@ -5,10 +5,11 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_image_hero
+    - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
     - views.view.recipe_list
   content:
-    - 'block_content:hero_block:0f912b12-bcb3-496e-b635-cb805804f799'
+    - 'block_content:hero_block:fa8cf769-c583-48f1-85ae-550b48fc096a'
   module:
     - block_content
     - image
@@ -25,14 +26,14 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: 'Hero section'
+          label: hero
         components:
-          cc616131-63d6-4261-a7f7-49c231bde428:
-            uuid: cc616131-63d6-4261-a7f7-49c231bde428
+          a931a3f7-61fc-4b53-88c0-2be2fdab16cb:
+            uuid: a931a3f7-61fc-4b53-88c0-2be2fdab16cb
             region: content
             configuration:
-              id: 'block_content:0f912b12-bcb3-496e-b635-cb805804f799'
-              label: 'Hero block'
+              id: 'block_content:fa8cf769-c583-48f1-85ae-550b48fc096a'
+              label: Hero
               provider: block_content
               label_display: '0'
               status: true
