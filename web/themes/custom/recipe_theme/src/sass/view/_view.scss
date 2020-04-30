@@ -4,8 +4,9 @@
   justify-content: center;
 }
 
-.recipe {
+.recipe,
+.card {
   text-align: center;
-  background-color: $white;
+  background-color: $gray-200;
   padding-top: 1rem;
 }
