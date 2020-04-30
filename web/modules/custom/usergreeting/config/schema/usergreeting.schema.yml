@@ -1,0 +1,15 @@
+# Schema for the configuration files of the Usergreeting module.
+
+usergreeting.settings:
+  type: config_object
+  label: 'Usergreeting settings'
+  mapping:
+    morning_start:
+      type: integer
+      label: 'Time value for start point of morning greeting'
+    afternoon_start:
+      type: integer
+      label: 'Time value for start point of afternoon greeting'
+    evening_start:
+      type: integer
+      label: 'Time value for start point of evening greeting'

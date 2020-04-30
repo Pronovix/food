@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_description
+    - field.storage.node.field_ingredient_terms
     - field.storage.node.field_type_of_food
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
@@ -26,14 +27,29 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_description
+  field_ingredient_terms:
+    label: 'Ingredient terms'
+    datasource_id: 'entity:node'
+    property_path: field_ingredient_terms
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_ingredient_terms
   field_type_of_food:
     label: 'Type of food'
     datasource_id: 'entity:node'
     property_path: field_type_of_food
-    type: text
+    type: integer
     dependencies:
       config:
         - field.storage.node.field_type_of_food
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
   rendered_item:
     label: 'Rendered item'
     property_path: rendered_item
@@ -50,14 +66,8 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: status
     type: boolean
-    dependencies:
-      module:
-        - node
-  sticky:
-    label: 'Sticky at top of lists'
-    datasource_id: 'entity:node'
-    property_path: sticky
-    type: boolean
+    indexed_locked: true
+    type_locked: true
     dependencies:
       module:
         - node
@@ -65,15 +75,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: string
-    dependencies:
-      module:
-        - node
-  type:
-    label: 'Content type'
-    datasource_id: 'entity:node'
-    property_path: type
-    type: string
+    type: text
     dependencies:
       module:
         - node
@@ -82,6 +84,8 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: uid
     type: integer
+    indexed_locked: true
+    type_locked: true
     dependencies:
       module:
         - node
@@ -98,6 +102,7 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - ingredients_vocab
         - type_of_food
     languages:
       default: true
@@ -109,6 +114,9 @@ processor_settings:
   aggregated_field:
     weights:
       add_properties: 20
+  content_access:
+    weights:
+      preprocess_query: -30
   entity_status:
     weights:
       preprocess_index: -10

@@ -1,4 +1,4 @@
 services:
   usergreeting.greeting:
     class: Drupal\usergreeting\GreetingTime
-    arguments: ['@datetime.time', '@current_user', '@string_translation']
+    arguments: ['@config.factory', '@datetime.time', '@string_translation']

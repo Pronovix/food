@@ -16,5 +16,5 @@ settings:
   id: usergreeting_block
   label: Usergreeting
   provider: usergreeting
-  label_display: visible
+  label_display: '0'
 visibility: {  }
