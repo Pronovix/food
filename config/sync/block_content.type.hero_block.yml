@@ -1,0 +1,8 @@
+uuid: 96491beb-4971-4680-8125-e68abad27f6f
+langcode: en
+status: true
+dependencies: {  }
+id: hero_block
+label: 'Hero block'
+revision: 0
+description: 'Contains the hero including background image and body.'
