@@ -488,7 +488,6 @@ display:
         weight: -49
       cache:
         type: none
-        options: {  }
       defaults:
         cache: false
     cache_metadata:
