@@ -8,8 +8,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: recipe_theme_local_actions
 theme: recipe_theme
-region: header
-weight: -2
+region: content
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:
