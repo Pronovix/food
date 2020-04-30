@@ -2,15 +2,16 @@ uuid: b11493ed-029b-4616-a795-2a64321f5b9c
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.node.field_description
+    - field.storage.node.field_ingredient_terms
+    - field.storage.node.field_type_of_food
+    - search_api.server.default_server
+    - core.entity_view_mode.node.search_index
   module:
     - node
     - search_api
     - taxonomy
-  config:
-    - field.storage.node.field_description
-    - field.storage.node.field_type_of_food
-    - search_api.server.default_server
-    - core.entity_view_mode.node.search_index
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: default_index
@@ -26,6 +27,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_description
+  field_ingredient_terms:
+    label: 'Ingredient terms'
+    datasource_id: 'entity:node'
+    property_path: field_ingredient_terms
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_ingredient_terms
   field_type_of_food:
     label: 'Type of food'
     datasource_id: 'entity:node'
@@ -93,6 +102,7 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - ingredients_vocab
         - type_of_food
     languages:
       default: true

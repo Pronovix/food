@@ -1,0 +1,22 @@
+uuid: aaf5efea-b54c-456d-a646-1e40ceb4322b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ingredients_vocab
+  module:
+    - text
+id: taxonomy_term.ingredients_vocab.default
+targetEntityType: taxonomy_term
+bundle: ingredients_vocab
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true
