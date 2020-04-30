@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: extra_large
-label: 'Extra large (1000x600)'
+label: 'Extra large (1110x600)'
 effects:
   430b06bd-d01a-4e52-8435-9f4384d90f05:
     uuid: 430b06bd-d01a-4e52-8435-9f4384d90f05
     id: image_scale_and_crop
     weight: 1
     data:
-      width: 1000
+      width: 1110
       height: 600
       anchor: center-center

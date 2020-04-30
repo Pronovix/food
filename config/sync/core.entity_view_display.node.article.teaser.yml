@@ -33,7 +33,7 @@ content:
     label: above
     settings:
       trim_length: 100
-    third_party_settings: {  }
+    third_party_settings: {}
   field_image:
     type: image
     weight: 0
@@ -41,7 +41,7 @@ content:
     settings:
       image_style: medium
       image_link: content
-    third_party_settings: {  }
+    third_party_settings: {}
     label: hidden
 hidden:
   addtoany: true
