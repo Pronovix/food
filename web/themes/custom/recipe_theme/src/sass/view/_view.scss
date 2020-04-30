@@ -8,11 +8,10 @@
   .views-field-field-image {
     margin: 15px auto 15px;
   }
-
-  img {
-    border: 1px solid black;
-  }
 }
-  .recipe {
-    text-align: center;
-  }
+
+.recipe {
+  text-align: center;
+  background-color: $white;
+  padding-top: 1rem;
+}

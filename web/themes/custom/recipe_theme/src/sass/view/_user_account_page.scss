@@ -1,0 +1,58 @@
+.user__name,
+.user__field-first-name,
+.user__field-introduction {
+  .field__label {
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+  }
+}
+
+.user__name,
+.user__field-first-name {
+  .field__label,
+  .field__item {
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $gray-800;
+  }
+  .field__label {
+    margin-top: 0.5rem;
+  }
+  .field__item {
+    background-color: $gray-200;
+    padding: 1rem auto;
+    border-radius: 0.4rem;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+.user__field-introduction {
+  .field__label {
+    margin-top: 1.5rem;
+    font-size: 1.875rem;
+    line-height: 3.125rem;
+  }
+  .field__item {
+    text-align: justify;
+    text-indent: 2rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.user__user-picture {
+  text-align: center;
+}
+
+.mccoppin {
+  border: 1rem solid $white;
+  padding: 3rem;
+  border-radius: 2rem;
+}
+
+.path-user {
+  .block--recipe-theme-page-title {
+    display: none;
+  }
+}
