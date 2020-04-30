@@ -406,7 +406,7 @@ $btn-border-width: $input-btn-border-width !default;
 $btn-font-weight: $font-weight-normal !default;
 $btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
-$btn-focus-box-shadow: $brand-4  !default;
+$btn-focus-box-shadow: $brand-4 !default;
 $btn-disabled-opacity: 0.65 !default;
 $btn-active-box-shadow: inset 0 3px 5px white !default;
 
@@ -492,9 +492,9 @@ $form-check-inline-input-margin-x: 0.3125rem !default;
 $form-grid-gutter-width: 10px !default;
 $form-group-margin-bottom: 1rem !default;
 
-$input-group-addon-color: $brand-4  !default;
+$input-group-addon-color: $brand-4 !default;
 $input-group-addon-bg: $white !default;
-$input-group-addon-border-color: $brand-4  !default;
+$input-group-addon-border-color: $brand-4 !default;
 
 $custom-forms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
@@ -514,7 +514,7 @@ $custom-control-indicator-disabled-bg: $input-disabled-bg !default;
 $custom-control-label-disabled-color: $gray-200 !default;
 
 $custom-control-indicator-checked-color: $white !default;
-$custom-control-indicator-checked-bg: $secondary  !default;
+$custom-control-indicator-checked-bg: $secondary !default;
 $custom-control-indicator-checked-disabled-bg: $white !default;
 $custom-control-indicator-checked-box-shadow: none !default;
 $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg !default;
@@ -523,7 +523,7 @@ $custom-control-indicator-focus-box-shadow: $input-focus-box-shadow !default;
 $custom-control-indicator-focus-border-color: $input-focus-border-color !default;
 
 $custom-control-indicator-active-color: $white !default;
-$custom-control-indicator-active-bg: $secondary  !default;
+$custom-control-indicator-active-bg: $secondary !default;
 $custom-control-indicator-active-box-shadow: none !default;
 $custom-control-indicator-active-border-color: $custom-control-indicator-active-bg !default;
 
@@ -570,7 +570,7 @@ $custom-select-disabled-color: $gray-200 !default;
 $custom-select-bg: $input-bg !default;
 $custom-select-disabled-bg: $white !default;
 $custom-select-bg-size: 8px 10px !default; // In pixels because image dimensions
-$custom-select-indicator-color: $secondary  !default;
+$custom-select-indicator-color: $secondary !default;
 $custom-select-indicator: str-replace(
   url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"),
   '#',
@@ -700,7 +700,7 @@ $nav-link-padding-y: 0.5rem !default;
 $nav-link-padding-x: 1rem !default;
 $nav-link-disabled-color: $gray-200 !default;
 
-$nav-tabs-border-color: $secondary  !default;
+$nav-tabs-border-color: $secondary !default;
 $nav-tabs-border-width: $border-width !default;
 $nav-tabs-border-radius: $border-radius !default;
 $nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color !default;
@@ -712,7 +712,7 @@ $nav-pills-border-radius: $border-radius !default;
 $nav-pills-link-active-color: $white !default;
 $nav-pills-link-active-bg: $primary !default;
 
-$nav-divider-color: $secondary  !default;
+$nav-divider-color: $secondary !default;
 $nav-divider-margin-y: $spacer / 2 !default;
 
 // Navbar
@@ -802,21 +802,21 @@ $pagination-padding-y-lg: 0.75rem !default;
 $pagination-padding-x-lg: 1.5rem !default;
 $pagination-line-height: 1.25 !default;
 
-$pagination-color: $secondary  !default;
+$pagination-color: $secondary !default;
 $pagination-bg: $white !default;
 $pagination-border-width: $border-width !default;
 $pagination-border-color: $secondary !default;
 
-$pagination-focus-box-shadow: $secondary  !default;
+$pagination-focus-box-shadow: $secondary !default;
 $pagination-focus-outline: 0 !default;
 
 $pagination-hover-color: $white !default;
-$pagination-hover-bg: $secondary  !default;
+$pagination-hover-bg: $secondary !default;
 $pagination-hover-border-color: $gray-300 !default;
 
 $pagination-active-color: $white !default;
 $pagination-active-bg: $secondary !default;
-$pagination-active-border-color: $secondary  !default;
+$pagination-active-border-color: $secondary !default;
 
 $pagination-disabled-color: $white !default;
 $pagination-disabled-bg: $gray-200 !default;
@@ -991,7 +991,7 @@ $progress-font-size: $font-size-base * 0.75 !default;
 $progress-bg: $gray-100 !default;
 $progress-border-radius: $border-radius !default;
 $progress-box-shadow: inset 0 0.1rem 0.1rem rgba($black, 0.1) !default;
-$progress-bar-color: $secondary  !default;
+$progress-bar-color: $secondary !default;
 $progress-bar-bg: theme-color('red') !default;
 $progress-bar-animation-timing: 1s linear infinite !default;
 $progress-bar-transition: width 0.6s ease !default;
