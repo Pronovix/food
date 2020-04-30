@@ -7,15 +7,12 @@ dependencies:
     - field.field.user.user.field_introduction
     - field.field.user.user.user_picture
     - image.style.thumbnail
-    - system.menu.account
-    - system.menu.footer
     - views.view.recipe_list
   module:
     - image
     - layout_builder
     - layout_discovery
     - radix_layouts
-    - system
     - text
     - user
     - views
@@ -118,46 +115,12 @@ third_party_settings:
               id: 'views_block:recipe_list-block_1'
               label: ''
               provider: views
-              label_display: '0'
+              label_display: visible
               views_label: ''
               items_per_page: none
               context_mapping: {  }
             additional: {  }
             weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: Footer
-        components:
-          f398a0b0-4a0e-42a0-85dd-012f64740e2a:
-            uuid: f398a0b0-4a0e-42a0-85dd-012f64740e2a
-            region: content
-            configuration:
-              id: 'system_menu_block:footer'
-              label: Footer
-              provider: system
-              label_display: '0'
-              level: 1
-              depth: 0
-              expand_all_items: false
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          9c6e6c6d-781f-46da-857b-7c90504afd9d:
-            uuid: 9c6e6c6d-781f-46da-857b-7c90504afd9d
-            region: content
-            configuration:
-              id: 'system_menu_block:account'
-              label: 'User account menu'
-              provider: system
-              label_display: '0'
-              level: 1
-              depth: 0
-              expand_all_items: false
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
         third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
