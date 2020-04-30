@@ -1,6 +1,6 @@
 uuid: f99451ef-7ba2-4202-826c-a7ba77b6eae4
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - facets.facet.type_of_food

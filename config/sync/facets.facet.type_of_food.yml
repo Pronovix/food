@@ -10,11 +10,11 @@ dependencies:
 id: type_of_food
 name: 'Type of food'
 url_alias: type_of_food
-weight: 0
+weight: -1
 min_count: 1
 show_only_one_result: false
 field_identifier: field_type_of_food
-facet_source_id: 'search_api:views_page__catalog__page_1'
+facet_source_id: 'search_api:views_block__catalog__block_1'
 widget:
   type: checkbox
   config:
@@ -32,7 +32,7 @@ expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
 exclude: false
-only_visible_when_facet_source_is_visible: true
+only_visible_when_facet_source_is_visible: false
 processor_configs:
   active_widget_order:
     processor_id: active_widget_order

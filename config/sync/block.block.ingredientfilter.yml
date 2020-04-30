@@ -1,6 +1,6 @@
 uuid: 532ae500-01b1-477d-812a-9526d340fd7d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - facets.facet.ingredient_filter
