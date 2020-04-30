@@ -11,7 +11,7 @@ _core:
 id: recipe_theme_page_title
 theme: recipe_theme
 region: header
-weight: -3
+weight: -5
 provider: null
 plugin: page_title_block
 settings:
