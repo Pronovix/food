@@ -11,7 +11,7 @@ use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 
 /**
- * Implements hook_entity_type_presave().
+ * Implements hook_ENTITY_TYPE_presave().
  */
 function ingredient_term_node_presave(NodeInterface $node): void {
   $material = $node->get('field_ingredients')->value;
@@ -32,6 +32,6 @@ function ingredient_term_node_presave(NodeInterface $node): void {
       $term->save();
     }
     $recipe_term_id = $term->id();
-    $node->field_ingredient_terms->set($recipe_term_id);
+    $node->set('field_ingredient_terms', $recipe_term_id);
   }
 }
