@@ -1,11 +1,16 @@
-.view-catalog .views-exposed-form {
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-}
+.view-catalog {
+  .views-exposed-form {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+  }
 
-.recipe {
-  text-align: center;
-  background-color: $white;
-  padding-top: 1rem;
+  .views-field-field-image {
+    margin: 15px auto 15px;
+  }
 }
+  .recipe {
+    text-align: center;
+    background-color: $white;
+    padding-top: 1rem;
+  }

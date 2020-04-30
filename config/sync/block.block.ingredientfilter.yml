@@ -6,12 +6,13 @@ dependencies:
     - facets.facet.ingredient_filter
   module:
     - facets
+    - system
   theme:
     - recipe_theme
 id: ingredientfilter
 theme: recipe_theme
-region: content
-weight: 0
+region: sidebar_first
+weight: -5
 provider: null
 plugin: 'facet_block:ingredient_filter'
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: ingredientfilter
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /catalog
+    negate: false
+    context_mapping: {  }
