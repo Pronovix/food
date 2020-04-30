@@ -5,6 +5,7 @@ style:
       assets/css/recipe_theme.style.css: {}
   js:
     assets/js/recipe_theme.script.js: {}
+    node_modules/bootstrap/dist/js/bootstrap.min.js: { minified: true }
   dependencies:
     - core/jquery
     - core/drupal
