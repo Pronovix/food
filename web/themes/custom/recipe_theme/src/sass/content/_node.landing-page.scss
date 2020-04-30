@@ -1,5 +1,26 @@
-.landing-page__field-image-hero {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  opacity: 0.5;
+.landing-page__body {
+  text-align: center;
+  margin: 2.5rem 2rem;
+  @include for-tablet-portrait-up {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  @include for-tablet-landscape-up {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  @include for-desktop-up {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  @include for-big-desktop-up {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+.landing-page {
+  img {
+    border: 1px solid black;
+  }
 }
