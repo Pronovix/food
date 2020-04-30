@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - system
   theme:
     - recipe_theme
@@ -11,8 +10,8 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: recipe_theme_branding
 theme: recipe_theme
-region: header
-weight: 0
+region: navbar_branding
+weight: -7
 provider: null
 plugin: system_branding_block
 settings:
@@ -23,11 +22,4 @@ settings:
   use_site_logo: true
   use_site_name: true
   use_site_slogan: true
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      landing_page: landing_page
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }

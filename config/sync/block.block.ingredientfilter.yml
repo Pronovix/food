@@ -11,7 +11,7 @@ dependencies:
 id: ingredientfilter
 theme: recipe_theme
 region: content
-weight: -2
+weight: -5
 provider: null
 plugin: 'facet_block:ingredient_filter'
 settings:

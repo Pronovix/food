@@ -10,8 +10,8 @@ _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: recipe_theme_page_title
 theme: recipe_theme
-region: content
-weight: -6
+region: header
+weight: -3
 provider: null
 plugin: page_title_block
 settings:
