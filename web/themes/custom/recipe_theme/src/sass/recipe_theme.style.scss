@@ -42,6 +42,7 @@
 @import 'base/helpers';
 @import 'base/elements';
 @import 'base/typography';
+@import 'base/font_faces';
 
 // Layout
 // -----------------------------------------------------------------------------
@@ -69,3 +70,4 @@
 @import 'content/node.article';
 @import 'content/node.landing-page';
 @import 'view/view';
+@import 'view/user_account_page';
