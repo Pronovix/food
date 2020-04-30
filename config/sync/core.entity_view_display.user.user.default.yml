@@ -112,7 +112,7 @@ third_party_settings:
             uuid: 98ad3b74-7465-4e14-9a6c-99a21ecb66ed
             region: content
             configuration:
-              id: 'views_block:recipe_list-your_recipes'
+              id: 'views_block:recipe_list-block_1'
               label: ''
               provider: views
               label_display: visible

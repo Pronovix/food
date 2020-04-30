@@ -383,6 +383,33 @@ display:
       tags:
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_image'
+  block_1:
+    tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Recent Recipes'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      arguments: {  }
+      defaults:
+        arguments: false
+        relationships: false
+        title: false
+      relationships: {  }
+      title: 'Recent Recipes'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_description'
+        - 'config:field.storage.node.field_image'
   recent_recipes:
     display_plugin: block
     id: recent_recipes
@@ -437,9 +464,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
-      tags:
-        - 'config:field.storage.node.field_description'
-        - 'config:field.storage.node.field_image'
+      tags: {  }
   your_recipes:
     display_plugin: block
     id: your_recipes
