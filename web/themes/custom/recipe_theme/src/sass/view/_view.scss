@@ -8,9 +8,13 @@
   .views-field-field-image {
     margin: 15px auto 15px;
   }
-}
-  .recipe {
-    text-align: center;
-    background-color: $white;
-    padding-top: 1rem;
+
+  .views-label {
+    font-weight: bold;
   }
+}
+.recipe {
+  text-align: center;
+  background-color: $white;
+  padding-top: 1rem;
+}
