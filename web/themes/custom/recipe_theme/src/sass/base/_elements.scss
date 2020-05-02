@@ -93,7 +93,8 @@ blockquote {
   color: $gray-600;
 }
 
-.btn-primary {
+.btn-primary,
+button.decline-button {
   text-transform: uppercase;
   font-weight: bold;
   font-family: $font-family-base;
@@ -101,6 +102,10 @@ blockquote {
   background-color: $white;
   min-width: 85px;
   border: 2px solid $primary;
+}
+
+button.decline-button {
+  border-radius: 0;
 }
 
 small {
