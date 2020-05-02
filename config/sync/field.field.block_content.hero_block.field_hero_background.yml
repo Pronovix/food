@@ -19,7 +19,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   css_settings:
-    css_selector: .hero-block__body
+    css_selector: ''
     css_repeat: no-repeat
     css_background_size: auto
     css_background_position: 'center center'
