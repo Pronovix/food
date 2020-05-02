@@ -12,7 +12,6 @@ p {
   color: $primary;
 }
 
-h1,
 h2,
 h3,
 h5 {
@@ -22,10 +21,10 @@ h5 {
 }
 
 h1 {
-  &.text-light {
-    float: left;
-  }
+  font-weight: bold;
+  margin: rem 0 1rem;
   text-transform: uppercase;
+  text-shadow: 0.1rem 0.1rem $black;
 }
 
 h4,
