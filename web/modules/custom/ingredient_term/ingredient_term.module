@@ -16,6 +16,7 @@ use Drupal\taxonomy\Entity\Term;
 function ingredient_term_node_presave(NodeInterface $node): void {
   $material = $node->get('field_ingredients')->value;
   $lines = explode(PHP_EOL, (string) $material);
+  $recipeTerms = [];
   foreach ($lines as $line) {
     $trimmed_line = trim($line);
     $ingredients = explode(' ', $trimmed_line);
@@ -31,8 +32,7 @@ function ingredient_term_node_presave(NodeInterface $node): void {
       ]);
       $term->save();
     }
-    $ingredientTermContent = $node->get('field_ingredient_terms')->getValue();
-    array_push($ingredientTermContent, $term);
-    $node->set('field_ingredient_terms', $ingredientTermContent);
+    array_push($recipeTerms, $term);
   }
+  $node->set('field_ingredient_terms', $recipeTerms);
 }
