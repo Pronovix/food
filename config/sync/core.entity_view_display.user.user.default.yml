@@ -108,8 +108,8 @@ third_party_settings:
         layout_settings:
           label: Uploaded
         components:
-          16c93a15-2839-40c6-bda8-58579daa8a94:
-            uuid: 16c93a15-2839-40c6-bda8-58579daa8a94
+          98ad3b74-7465-4e14-9a6c-99a21ecb66ed:
+            uuid: 98ad3b74-7465-4e14-9a6c-99a21ecb66ed
             region: content
             configuration:
               id: 'views_block:recipe_list-your_recipes'
@@ -120,7 +120,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: 1
+            weight: 0
         third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo

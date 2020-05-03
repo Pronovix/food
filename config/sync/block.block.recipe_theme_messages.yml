@@ -11,7 +11,7 @@ _core:
 id: recipe_theme_messages
 theme: recipe_theme
 region: header
-weight: -6
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

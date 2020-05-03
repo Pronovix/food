@@ -33,7 +33,6 @@ module:
   help: 0
   history: 0
   image: 0
-  ingredient_term: 0
   ingredient_validation: 0
   layout_builder: 0
   layout_discovery: 0
@@ -54,6 +53,7 @@ module:
   search_api_db: 0
   search_api_db_defaults: 0
   shortcut: 0
+  similarterms: 0
   system: 0
   taxonomy: 0
   text: 0

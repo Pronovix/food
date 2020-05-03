@@ -12,8 +12,8 @@ _core:
   default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
 id: recipe_theme_main_menu
 theme: recipe_theme
-region: navbar_branding
-weight: -6
+region: navbar_right
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:
