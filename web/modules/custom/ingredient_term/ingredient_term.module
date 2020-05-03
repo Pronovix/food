@@ -31,11 +31,8 @@ function ingredient_term_node_presave(NodeInterface $node): void {
       ]);
       $term->save();
     }
-    $recipe_terms = [
-      'value' => $term,
-    ];
-    $recipe_terms &= $term->value;
-    $recipe_term_id = $recipe_terms->value->id();
-    $node->set('field_ingredient_terms', $recipe_term_id);
+    $ingredientTermContent = $node->get('field_ingredient_terms')->getValue();
+    array_push($ingredientTermContent, $term);
+    $node->set('field_ingredient_terms', $ingredientTermContent);
   }
 }
