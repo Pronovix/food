@@ -14,25 +14,27 @@ use Drupal\taxonomy\Entity\Term;
  * Implements hook_ENTITY_TYPE_presave().
  */
 function ingredient_term_node_presave(NodeInterface $node): void {
-  $material = $node->get('field_ingredients')->value;
-  $lines = explode(PHP_EOL, (string) $material);
-  $recipeTerms = [];
-  foreach ($lines as $line) {
-    $trimmed_line = trim($line);
-    $ingredients = explode(' ', $trimmed_line);
-    $element = end($ingredients);
-    $terms = taxonomy_term_load_multiple_by_name($element, 'ingredients_vocab');
-    if ($terms) {
-      $term = reset($terms);
+  if ($node->getType() === 'article') {
+    $material = $node->get('field_ingredients')->value;
+    $lines = explode(PHP_EOL, (string) $material);
+    $recipeTerms = [];
+    foreach ($lines as $line) {
+      $trimmed_line = trim($line);
+      $ingredients = explode(' ', $trimmed_line);
+      $element = end($ingredients);
+      $terms = taxonomy_term_load_multiple_by_name($element, 'ingredients_vocab');
+      if ($terms) {
+        $term = reset($terms);
+      }
+      else {
+        $term = Term::create([
+          'name' => $element,
+          'vid' => 'ingredients_vocab',
+        ]);
+        $term->save();
+      }
+      array_push($recipeTerms, $term);
     }
-    else {
-      $term = Term::create([
-        'name' => $element,
-        'vid' => 'ingredients_vocab',
-      ]);
-      $term->save();
-    }
-    array_push($recipeTerms, $term);
+    $node->set('field_ingredient_terms', $recipeTerms);
   }
-  $node->set('field_ingredient_terms', $recipeTerms);
 }
