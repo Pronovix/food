@@ -399,6 +399,7 @@ display:
         row: false
         pager: false
         sorts: false
+        title: false
       relationships: {  }
       style:
         type: default
@@ -431,6 +432,7 @@ display:
           entity_type: node
           entity_field: created
           plugin_id: date
+      title: 'Recent Recipes'
     cache_metadata:
       max-age: -1
       contexts:
