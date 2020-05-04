@@ -8,7 +8,8 @@
   {% embed '@radix/navbar/navbar.twig' with {
     placement: 'sticky-top',
     container: 'fixed',
-    utility_classes: [ ],
+    color: 'light',
+    utility_classes: ['bg-light'],
   } %}
 
     {% block branding %}
@@ -40,14 +41,20 @@
         </div>
       </header>
     {% endif %}
-
-    {% if page.content %}
-      <div class="page__content">
-        <div class="container">
-          {{ page.content }}
+    <div class="container">
+      <div class="row">
+        {% if page.sidebar_first %}
+          <div id="sidebar-first" class="column sidebar col-3">
+            {{ page.sidebar_first }}
+          </div>
+        {% endif %}
+        <div class="page__content col">
+          {% if page.content %}
+            {{ page.content }}
+          {% endif %}
         </div>
       </div>
-    {% endif %}
+    </div>
   </main>
 
   {% if page.footer %}
