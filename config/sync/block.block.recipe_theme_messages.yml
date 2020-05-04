@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: recipe_theme_messages
 theme: recipe_theme
-region: navbar_branding
-weight: -3
+region: header
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

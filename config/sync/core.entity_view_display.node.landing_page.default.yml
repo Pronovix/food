@@ -8,7 +8,7 @@ dependencies:
     - node.type.landing_page
     - views.view.recipe_list
   content:
-    - 'block_content:hero_block:22cf93c9-3278-46ee-bd27-628adb4a6572'
+    - 'block_content:hero_block:f6f07d1e-01d3-4d7d-b785-c8fb6c9dc938'
   module:
     - block_content
     - layout_builder
@@ -26,12 +26,12 @@ third_party_settings:
         layout_settings:
           label: 'Hero section'
         components:
-          090b782e-4315-4eea-9068-cd7faa702c66:
-            uuid: 090b782e-4315-4eea-9068-cd7faa702c66
+          9c539d49-6952-40c6-86c1-42c35741a793:
+            uuid: 9c539d49-6952-40c6-86c1-42c35741a793
             region: content
             configuration:
-              id: 'block_content:22cf93c9-3278-46ee-bd27-628adb4a6572'
-              label: 'Hero block'
+              id: 'block_content:f6f07d1e-01d3-4d7d-b785-c8fb6c9dc938'
+              label: 'Hero Block'
               provider: block_content
               label_display: '0'
               status: true

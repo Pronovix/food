@@ -8,8 +8,8 @@ dependencies:
     - recipe_theme
 id: usergreeting
 theme: recipe_theme
-region: navbar_left
-weight: 0
+region: navbar_right
+weight: -3
 provider: null
 plugin: usergreeting_block
 settings:

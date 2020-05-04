@@ -1,22 +1,66 @@
-// Headings
+// Headings, Text
 // -----------------------------------------------------------------------------
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
+  font-family: $font-family-base;
+  font-style: normal;
+  color: $primary;
 }
 
-// Text
-// -----------------------------------------------------------------------------
+h2,
+h3,
+h5 {
+  text-align: center;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+  text-shadow: 0.1rem 0.1rem $black;
+}
+
+h4,
+h6,
 p {
+  font-weight: normal;
 }
 
 // Links
 // -----------------------------------------------------------------------------
 a {
+  color: $brand-5;
+  font-family: $font-family-monospace;
+  font-weight: 600;
+  &.navbar-brand {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+  &.nav-link {
+    text-transform: uppercase;
+    color: $primary;
+    display: inline;
+  }
+  &.nav-link:hover {
+    color: $white;
+    background-color: $primary;
+  }
+  &.nav-link.is-active {
+    color: $primary;
+    background-color: $gray-100;
+    border-style: solid;
+    border-color: $secondary;
+  }
   @include hover {
+    color: $brand-5;
+    text-decoration-line: underline;
   }
 }
 
@@ -25,6 +69,8 @@ a {
 ol,
 ul,
 dl {
+  color: $gray-600;
+  font-family: $font-family-monospace;
 }
 
 // Image
@@ -41,10 +87,30 @@ figcaption {
 // Other
 // -----------------------------------------------------------------------------
 blockquote {
+  font-family: $font-family-monospace;
+  font-style: italic;
+  font-weight: normal;
+  color: $gray-600;
 }
 
-strong {
+.btn-primary,
+button.decline-button {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: $font-family-base;
+  color: $primary;
+  background-color: $white;
+  min-width: 85px;
+  border: 2px solid $primary;
+}
+
+button.decline-button {
+  border-radius: 0;
 }
 
 small {
+  font-family: $font-family-monospace;
+  font-style: normal;
+  font-weight: 600;
+  color: $gray-400;
 }
